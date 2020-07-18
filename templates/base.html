@@ -5,13 +5,14 @@
           rel="stylesheet">
     {% include "_meta.html" %}
     <title>Huhu</title>
-    <link rel="stylesheet" href="/normalize.css">
+    <script src="{{ get_url(path="/js/index.js") }}"></script>
+    <link rel="stylesheet" href="{{ get_url(path="normalize.css") }}">
     <link rel="stylesheet" href="{{ get_url(path="index.css") }}">
+    {% block head %}
+    {% endblock %}
 </head>
 <body>
-<header>
-    {% include "_header.html" %}
-</header>
+{% include "_header.html" %}
 {% block body %}
 {% endblock %}
 <footer>

@@ -1,21 +1,91 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div>
-    <section>
-        <div>
-            <div class="heading-text">
-                What is Huhu.io?
-            </div>
-            <div class="subtitle-text">
-                HuHu is a geek startup dedicated to creating open-source tools for software developers. Our search
-                extensions and productivity tools help you create beautiful code—faster. We love discovering cool new
-                tools,
-                and we know you do too. That’s why HuHu is dedicated to giving back to all the software development
-                geeks
-                out there who have inspired us and contributed to the global developer community over the years.
+<div class="hero">
+    <div>
+        <div class="heading-text">
+            Build product the developer want
+        </div>
+        <div class="subtitle-text">
+            Huhu is a geek startup dedicated to creating open-source tools for software developers. We love
+            discovering cool new tools,
+            and we know you do too. That’s why HuHu is dedicated to giving back to all the software development
+            geeks out there who have inspired us and contributed to the global developer community over the years.
+        </div>
+    </div>
+    <div class="language-image-gallery">
+        <div style="position: absolute;">
+            <img class="language-image circle" src="/img/rust.png" alt="rust">
+            <img class="language-image circle" src="/img/golang.png" alt="rust">
+            <img class="language-image circle" src="/img/nodejs.png" alt="nodejs">
+            <img class="language-image circle" src="/img/javascript.png" alt="nodejs">
+            <img class="language-image circle" src="/img/typescript.png" alt="typescript">
+        </div>
+        <img src="/img/orange-yellow.svg" alt="">
+    </div>
+</div>
+<section class="dark">
+    <div class="title-text" style="color: white">Documentation search</div>
+    <div class="subtitle-text" style="color: white; margin-top: 3rem">
+        Executed directly from the address bar, these lightweight extensions provide instant search results of docs and
+        libraries.
+    </div>
+    <div style="margin-top: 3rem">
+        <div style="text-align: center;display: inline-block;">
+            <img style="bottom: -60px;position: relative;z-index: 2;"
+                 class="language-image circle" src="/img/rust.png" alt="rust">
+            <div class="card">
+                <div class="title-text" style="margin-top: 50px">Rust Search Extension</div>
+                <div class="subtitle-text">The ultimate search extension for Rust</div>
+                <div>Learn more</div>
             </div>
         </div>
-    </section>
-</div>
+        <div style="text-align: center;display: inline-block;">
+            <img style="bottom: -60px;position: relative;z-index: 2;"
+                 class="language-image circle" src="/img/golang.png" alt="rust">
+            <div class="card">
+                <div class="title-text" style="margin-top: 50px">Go Search Extension</div>
+                <div class="subtitle-text">The ultimate search extension for Golang</div>
+                <div>Learn more</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="green">
+    <div class="title-text" style="color: white">We love open-source</div>
+    <div class="subtitle-text" style="color: white; margin-top: 3rem">
+        Executed directly from the address bar, these lightweight extensions provide instant search results of docs and
+        libraries.
+    </div>
+    <div class="numbers-container" style="margin-top: 5rem">
+        <div class="dots"></div>
+        <div class="numbers">
+            <div class="number-item">
+                <div class="number">10+</div>
+                <div class="number-note">Projects</div>
+            </div>
+            <div class="number-item">
+                <div class="number">400+</div>
+                <div class="number-note">Github Stars</div>
+            </div>
+            <div class="number-item">xw
+                <div class="number">30+</div>
+                <div class="number-note">Github Forks</div>
+            </div>
+            <div class="number-item">
+                <div class="number">10+</div>
+                <div class="number-note">Contributors</div>
+            </div>
+            <div class="number-item">
+                <div class="number">1000+</div>
+                <div class="number-note">Commits</div>
+            </div>
+            <div class="number-item">
+                <div class="number">20+</div>
+                <div class="number-note">Version released</div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{ get_url(path="/js/animateDots.js") }}"></script>
 {% endblock %}

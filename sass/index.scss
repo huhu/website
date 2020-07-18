@@ -1,4 +1,96 @@
+@import "animation";
+@import "dots";
+@import "numbers";
+@import "shape";
 @import "text";
+
+
+* {
+  box-sizing: border-box;
+}
+
+a.logo {
+  font-family: $primary-font, serif;
+  font-size: 32px;
+  color: $primary-text-color;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  text-decoration: none;
+
+  &:visited {
+    color: $primary-text-color;
+  }
+}
+
+section {
+  padding: 5rem 10rem;
+}
+
+.dark {
+  background-color: #0a1c2d;
+  color: #fcfcfc;
+}
+
+.green {
+  background-color: #22C875;
+  color: #fcfcfc;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 10rem;
+  align-items: center;
+
+  .nav-item {
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+}
+
+.hero {
+  margin-top: 100px;
+  padding: 0 10rem;
+  display: flex;
+  align-items: center;
+
+  .language-image-gallery {
+    position: relative;
+    padding: 3rem;
+    width: 50%;
+    max-width: 500px;
+  }
+}
+
+.language-image {
+  background-color: white;
+  width: 125px;
+  box-shadow: 0 2.74416px 2.74416px rgba(0, 0, 0, .0274351), 0 5.48831px 5.48831px rgba(0, 0, 0, .0400741), 0 13.7208px 10.9766px rgba(0, 0, 0, .0499982), 0 20.5812px 20.5812px rgba(0, 0, 0, .0596004), 0 41.1623px 41.1623px rgba(0, 0, 0, .0709366), 0 96.0454px 89.1851px rgba(0, 0, 0, .09);
+  animation: float-rotate 7s ease-in-out infinite;
+}
+
+.card {
+  padding: 20px;
+  width: 450px;
+  position: relative;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+}
 
 footer {
   padding: 50px;
@@ -6,7 +98,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #202020;
+  background-color: #000;
   color: #fcfcfc;
 
   a {
