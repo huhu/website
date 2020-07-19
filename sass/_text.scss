@@ -2,11 +2,11 @@
 
 .heading-text {
   font-family: $primary-font, sans-serif;
-  font-size: 48px;
+  font-size: 55px;
   font-weight: 700;
   padding: 10px 0 25px 0;
   color: $primary-text-color;
-  line-height: 2.5rem;
+  line-height: 4rem;
 }
 
 h1, .title-text {
@@ -21,6 +21,7 @@ h2, .subtitle-text {
   font-size: 20px;
   font-weight: 500;
   color: $primary-text-color;
+  line-height: 1.8rem;
 }
 
 .text {

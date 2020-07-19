@@ -1,7 +1,9 @@
 @import "animation";
+@import "column";
 @import "dots";
 @import "numbers";
 @import "shape";
+@import "testimonial";
 @import "text";
 
 
@@ -27,9 +29,18 @@ section {
   padding: 5rem 10rem;
 }
 
+.black {
+  background-color: #000;
+  color: #fcfcfc;
+}
+
 .dark {
   background-color: #0a1c2d;
   color: #fcfcfc;
+}
+
+.light {
+  background-color: #F6F9FB;
 }
 
 .green {
@@ -79,6 +90,7 @@ header {
 .language-image {
   background-color: white;
   width: 125px;
+  height: 125px;
   box-shadow: 0 2.74416px 2.74416px rgba(0, 0, 0, .0274351), 0 5.48831px 5.48831px rgba(0, 0, 0, .0400741), 0 13.7208px 10.9766px rgba(0, 0, 0, .0499982), 0 20.5812px 20.5812px rgba(0, 0, 0, .0596004), 0 41.1623px 41.1623px rgba(0, 0, 0, .0709366), 0 96.0454px 89.1851px rgba(0, 0, 0, .09);
   animation: float-rotate 7s ease-in-out infinite;
 }
@@ -98,7 +110,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  background-color: #020f1c;
   color: #fcfcfc;
 
   a {
