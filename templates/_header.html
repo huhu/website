@@ -4,8 +4,50 @@
         HUHU
     </a>
     <nav>
-        <span class="nav-item subtitle-text">Products ▾</span>
+        <div class="nav-item subtitle-text">
+            <div id="nav-products" style="cursor: pointer">Products ▾</div>
+            <div id="menu-product" class="menu" style="display: none">
+                <div class="menu-content">
+                    <div>
+                        <div>Search extensions</div>
+                        <div class="text">
+                            <div>Rust</div>
+                            <div>Go</div>
+                            <div>C/C++</div>
+                            <div>Javascript</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>Productivity tools</div>
+                    </div>
+                </div>
+                <div class="menu-bottom"><a href="/products">See all our products ></a></div>
+                <img class="menu-bubble-left" src="/img/blue-bubble.svg" alt="">
+                <img class="menu-bubble-right" src="/img/orange-black.svg" alt="">
+            </div>
+        </div>
         <a class="nav-item subtitle-text" href="/blog">Blog</a>
         <a class="nav-item subtitle-text" href="/about">About</a>
     </nav>
+    <script>
+        let productNav = document.getElementById("nav-products");
+        let productMenu = document.getElementById("menu-product");
+        let timeout = 0;
+        productNav.onmouseover = () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            productMenu.style.display = "block";
+        };
+        productMenu.onmouseleave = productNav.onmouseleave = () => {
+            timeout = setTimeout(() => {
+                productMenu.style.display = "none";
+            }, 200);
+        };
+        productMenu.onmouseover = () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+        };
+    </script>
 </header>

@@ -1,6 +1,7 @@
 @import "animation";
 @import "column";
 @import "dots";
+@import "menu";
 @import "numbers";
 @import "shape";
 @import "testimonial";
@@ -60,7 +61,12 @@ header {
   padding: 2rem 10rem;
   align-items: center;
 
+  nav {
+    display: flex;
+  }
+
   .nav-item {
+    position: relative;
     margin: 0 20px;
     text-decoration: none;
     font-size: 18px;
