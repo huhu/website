@@ -104,6 +104,16 @@ header {
   border-radius: 5px;
 }
 
+.card-button {
+  border-radius: 3px;
+  background-color: #020F1C;
+  display: inline-block;
+  padding: 6px 20px;
+  margin-top: 2rem;
+  color: #fcfcfc;
+  text-decoration: none;
+}
+
 footer {
   padding: 50px;
   display: flex;
