@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block body %}
+<link rel="stylesheet" href="glider.css">
 <div class="hero">
     <div>
         <div class="heading-text">
@@ -21,7 +22,7 @@
             <img class="language-image circle" src="/img/javascript.png" alt="nodejs">
             <img class="language-image circle" src="/img/typescript.png" alt="typescript">
         </div>
-        <img src="/img/orange-yellow.svg" alt="">
+        <img style="min-width: 100%;" src="/img/orange-yellow.svg" alt="">
     </div>
 </div>
 <section class="light">
@@ -40,8 +41,8 @@
     </div>
     <div style="margin-top: 3rem">
         <div style="text-align: center;display: inline-block;">
-            <img style="bottom: -60px;position: relative;z-index: 2;"
-                 class="language-image circle" src="/img/rust.png" alt="rust">
+            <img style="bottom: -60px;position: relative;z-index: 2;" class="language-image circle" src="/img/rust.png"
+                alt="rust">
             <div class="card">
                 <div class="title-text" style="margin-top: 50px">Rust Search Extension</div>
                 <div class="subtitle-text">The ultimate search extension for Rust</div>
@@ -49,8 +50,8 @@
             </div>
         </div>
         <div style="text-align: center;display: inline-block;">
-            <img style="bottom: -60px;position: relative;z-index: 2;"
-                 class="language-image circle" src="/img/golang.png" alt="golang">
+            <img style="bottom: -60px;position: relative;z-index: 2;" class="language-image circle"
+                src="/img/golang.png" alt="golang">
             <div class="card">
                 <div class="title-text" style="margin-top: 50px">Go Search Extension</div>
                 <div class="subtitle-text">The ultimate search extension for Golang</div>
@@ -58,8 +59,8 @@
             </div>
         </div>
         <div style="text-align: center;display: inline-block;">
-            <img style="bottom: -60px;position: relative;z-index: 2;"
-                 class="language-image circle" src="/img/javascript.png" alt="javascript">
+            <img style="bottom: -60px;position: relative;z-index: 2;" class="language-image circle"
+                src="/img/javascript.png" alt="javascript">
             <div class="card">
                 <div class="title-text" style="margin-top: 50px">Javascript Search Extension</div>
                 <div class="subtitle-text">The ultimate search extension for Javascript</div>
@@ -114,37 +115,72 @@
     </div>
 </section>
 <section class="light">
-    <div class="title-text" >Developers love us</div>
+    <div class="title-text">Developers love us</div>
     <div class="subtitle-text" style=" margin-top: 3rem">
         We got a huge set of testimonials for our users, here are some.
     </div>
     <div class="testimonial-container" style="margin-top: 5rem">
-        <div class="testimonial-item">
-            <div style="padding:2rem">
-                <div class="testimonial-badge subtitle-text"><b>Rust Search Extension</b></div>
-                <div class="text">
-                    <i>This is by far the best extension I know about for a programming language I use. You also seem to
-                    have great ideas for new features, which you keep adding on a fast pace. All of them are also
-                        features that I did not even know that I want.</i>
+        <div class="glider-contain" style="width: 60%;">
+            <div class="glider">
+                <div class="testimonial-item">
+                    <div style="padding:2rem">
+                        <div class="testimonial-badge subtitle-text"><b>Rust Search Extension</b></div>
+                        <div class="text">
+                            <i>This is by far the best extension I know about for a programming language I use. You also
+                                seem to
+                                have great ideas for new features, which you keep adding on a fast pace. All of them are
+                                also
+                                features that I did not even know that I want.</i>
+                        </div>
+                    </div>
+                    <div class="testimonial-bottom subtext">
+                        comment by User on /r/rust
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div style="padding:2rem">
+                        <div class="testimonial-badge subtitle-text"><b>Rust Search Extension</b></div>
+                        <div class="text">
+                            <i>This is by far the best extension I know about for a programming language I use. You also
+                                seem to
+                                have great ideas for new features, which you keep adding on a fast pace. All of them are
+                                also
+                                features that I did not even know that I want.</i>
+                        </div>
+                    </div>
+                    <div class="testimonial-bottom subtext">
+                        comment by User on /r/rust
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div style="padding:2rem">
+                        <div class="testimonial-badge subtitle-text"><b>Rust Search Extension</b></div>
+                        <div class="text">
+                            <i>This is by far the best extension I know about for a programming language I use. You also
+                                seem to
+                                have great ideas for new features, which you keep adding on a fast pace. All of them are
+                                also
+                                features that I did not even know that I want.</i>
+                        </div>
+                    </div>
+                    <div class="testimonial-bottom subtext">
+                        comment by User on /r/rust
+                    </div>
                 </div>
             </div>
-            <div class="testimonial-bottom subtext">
-                comment by User on /r/rust
-            </div>
+            <button aria-label="Previous" class="glider-prev" style="top:40%; left: -42px">«</button>
+            <button aria-label="Next" class="glider-next" style="top:40%; right: -42px;">»</button>
+            <div role="tablist" id="dots" class="glider-dots"></div>
         </div>
     </div>
-    <ul class="carousel-indicator">
-        <li class="carousel-item" data-index="0"></li>
-        <li class="carousel-item is-active" data-index="1"></li>
-        <li class="carousel-item" data-index="2"></li>
-    </ul>
 </section>
 <section class="dark">
     <div class="columns">
         <div class="column">
             <img src="/img/technologies.svg" class="column-icon" alt="">
             <div class="column-name">Why Huhu?</div>
-            <div class="text">We create cool stuff that coders need and want, making your lives easier and more fun.</div>
+            <div class="text">We create cool stuff that coders need and want, making your lives easier and more fun.
+            </div>
         </div>
         <div class="column">
             <img src="/img/growth_support.svg" class="column-icon" alt="">
@@ -163,4 +199,17 @@
     </div>
 </section>
 <script src="{{ get_url(path="/js/animateDots.js") }}"></script>
+<script src="{{ get_url(path="/js/glider.js") }}"></script>
+<script type="text/javascript">
+    new Glider(document.querySelector('.glider'), {
+        tyoe: "carousel",
+        slidesToShow: 1,
+        rewind: true,
+        dots: '#dots',
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        },
+    });
+</script>
 {% endblock %}
