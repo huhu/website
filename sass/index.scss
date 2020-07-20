@@ -90,6 +90,8 @@ header {
     padding: 3rem;
     width: 50%;
     max-width: 500px;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -128,9 +130,30 @@ footer {
   align-items: center;
   background-color: #020f1c;
   color: #fcfcfc;
+  
+   .footer-logo {
+    color: white;
+    padding-right: 4rem;
+    font-family: "Open Sans",serif;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    text-decoration: none;
+  }
 
-  a {
+  .content {
+    display: flex;
+    align-items: center;
+  }
+
+  .right a {
     color: #fcfcfc;
-    text-decoration: underline;
+    text-decoration: none;
+  }
+
+  .right img {
+    width: 24px;
+    margin: 0 6px;
   }
 }
