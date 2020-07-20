@@ -3,6 +3,7 @@
 @import "dots";
 @import "menu";
 @import "numbers";
+@import "product";
 @import "shape";
 @import "testimonial";
 @import "text";
@@ -10,6 +11,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 a.logo {
@@ -58,8 +63,9 @@ header {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 10rem;
+  padding: 1rem 10rem;
   align-items: center;
+  border-bottom: 1px solid #ebecf2;
 
   nav {
     display: flex;
