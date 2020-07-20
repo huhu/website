@@ -86,7 +86,7 @@ header {
 }
 
 .hero {
-  margin-top: 100px;
+  //margin-top: 70px;
   padding: 0 10rem;
   display: flex;
   align-items: center;
@@ -126,6 +126,21 @@ header {
   margin-top: 2rem;
   color: #fcfcfc;
   text-decoration: none;
+
+  & > a {
+    color: white;
+  }
+}
+
+.page-hero {
+  margin-top: 70px;
+  text-align: center;
+
+  .page-hero-description {
+    padding-top: 2rem;
+    max-width: 80%;
+    margin: auto;
+  }
 }
 
 footer {
@@ -136,11 +151,11 @@ footer {
   align-items: center;
   background-color: #020f1c;
   color: #fcfcfc;
-  
-   .footer-logo {
+
+  .footer-logo {
     color: white;
     padding-right: 4rem;
-    font-family: "Open Sans",serif;
+    font-family: "Open Sans", serif;
     font-size: 32px;
     display: flex;
     align-items: center;

@@ -1,22 +1,20 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="heading-text">
-    Products
-</div>
-<section class="light">
+<section class="page-hero light">
     <div class="title-text">We made developer's life easier</div>
-    <div class="subtitle-text">
+    <div class="subtitle-text page-hero-description">
         From programming language search extension to productivity tools, the developer wanted is we
         hugely cared for.
     </div>
 </section>
 <section>
     <div class="title-text">Search Extensions</div>
-    <div class="product-container">
+    <div id="rust-search-extension" class="product-container">
         <div class="product-content">
+            <img class="product-logo" src="/img/rust-logo.png" alt="rust-logo">
             <div class="subtitle-text"><b>Rust Search Extension</b></div>
-            <div class="text">
+            <div class="product-description text">
                 Search docs, crates, builtin attributes, official books, and error codes, etc in your address bar
                 instantly.
             </div>
@@ -35,11 +33,71 @@
                     <img class="product-icon-tiny" src="/img/edge.svg" alt="edge">
                 </a>
             </div>
-            <div><a href="https://rust-search-extension.now.sh">Visit website</a></div>
-            <div><a href="https://github.com/huhu/rust-search-extension">Fork on Github</a></div>
+            <div class="card-button subtext"><a href="https://rust-search-extension.now.sh">Visit website</a></div>
+            <div class="card-button subtext"><a href="https://github.com/huhu/rust-search-extension">Fork on Github</a>
+            </div>
         </div>
         <div class="product-image">
             <img src="/img/rust-search-extension.gif" alt="">
+        </div>
+    </div>
+    <div id="go-search-extension" class="product-container">
+        <div class="product-image">
+            <img src="/img/rust-search-extension.gif" alt="">
+        </div>
+        <div class="product-content">
+            <img class="product-logo" src="/img/golang.png" alt="golang-logo">
+            <div class="subtitle-text"><b>Go Search Extension</b></div>
+            <div class="product-description text">
+                Search docs, crates, builtin attributes, official books, and error codes, etc in your address bar
+                instantly.
+            </div>
+            <div><b>Download</b></div>
+            <div style="text-align: center">
+                <a href="https://chrome.google.com/webstore/detail/golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb"
+                   target="_blank">
+                    <img class="product-icon-tiny" src="/img/chrome.svg" alt="chrome">
+                </a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/go-search-extension/"
+                   target="_blank">
+                    <img class="product-icon-tiny" src="/img/firefox.svg" alt="firefox">
+                </a>
+                <a href="https://microsoftedge.microsoft.com/addons/detail/ebibclchdmagkhopidkjckjkbhghfehh"
+                   target="_blank">
+                    <img class="product-icon-tiny" src="/img/edge.svg" alt="edge">
+                </a>
+            </div>
+            <div class="card-button subtext"><a href="https://go-search-extension.now.sh">Visit website</a></div>
+            <div class="card-button subtext"><a href="https://github.com/huhu/go-search-extension">Fork on Github</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="light">
+    <div class="title-text">Productivity Tools</div>
+</section>
+<section>
+    <div class="title-text">Other open-source projects</div>
+    <div class="columns">
+        <div class="column">
+            <img style="width: 100px" src="/img/sdk.svg" alt="icon">
+            <div style="padding: 2.5rem 0 1.2rem" class="subtitle-text"><b>Search Extension Sdk</b></div>
+            <div class="text">A core sdk powers you build your own search extension easily.</div>
+            <div class="card-button subtext">
+                <a href="https://github.com/huhu/search-extension-core">View Github</a>
+            </div>
+        </div>
+        <div class="column">
+            <img style="width: 100px" src="https://juice.huhu.io/juice.svg" alt="icon">
+            <div style="padding: 2.5rem 0 1.2rem" class="subtitle-text"><b>Juice</b></div>
+            <div class="text">An intuitive, elegant, and responsive Zola™ theme for product sites.</div>
+            <div class="card-button subtext">
+                <a href="https://github.com/huhu/juice">View Github</a>
+            </div>
+        </div>
+        <div class="column">
+            <div style="padding: 2.5rem 0 1.2rem" class="subtitle-text"><b>More</b></div>
+            <div class="text">More projects are coming...</div>
         </div>
     </div>
 </section>
