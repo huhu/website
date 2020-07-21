@@ -1,14 +1,14 @@
 .product-container {
   display: flex;
-  padding: 5rem 0 0;
+  padding: 5rem 0;
   align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
 .product-content {
   text-align: center;
   padding: 5rem 0;
+  flex-basis: 35%;
+  flex-shrink: 0;
 }
 
 .product-logo {
@@ -18,13 +18,12 @@
 
 .product-description {
   padding: 2rem 0;
-  padding-bottom: 2rem;
-  text-align: start;
+  text-align: center;
 }
 
 .product-image {
   //width: 500px;
-  padding: 0 2rem;
+  //padding: 0 2rem;
 }
 
 .product-icon-tiny {
