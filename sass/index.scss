@@ -168,16 +168,20 @@ footer {
     align-items: center;
   }
 
-  .right a {
-    color: #ddd;
+  .footer-link {
+    padding: 12px 0;
 
-    &:hover {
-      text-decoration: underline;
+    & > a {
+      color: #ddd;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   .right img {
-    width: 24px;
-    margin: 0 6px;
+    width: 25px;
+    margin-right: 10px;
   }
 }
