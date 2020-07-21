@@ -1,7 +1,9 @@
 .product-container {
   display: flex;
-  padding: 5rem 0;
+  padding: 5rem 0 0;
   align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .product-content {
@@ -16,10 +18,13 @@
 
 .product-description {
   padding: 2rem 0;
+  padding-bottom: 2rem;
+  text-align: start;
 }
 
 .product-image {
   //width: 500px;
+  padding: 0 2rem;
 }
 
 .product-icon-tiny {

@@ -87,15 +87,14 @@ header {
 
 .hero {
   //margin-top: 70px;
-  padding: 0 10rem;
+  padding: 0 8rem;
   display: flex;
   align-items: center;
 
   .language-image-gallery {
     position: relative;
-    padding: 3rem;
+    padding: 3rem 0;
     width: 50%;
-    max-width: 500px;
     display: flex;
     align-items: center;
   }

@@ -68,7 +68,7 @@
 .glider-next:hover,
 .glider-prev:focus,
 .glider-next:focus {
-  color: #a89cc8;
+  color: #0a1c2d;
 }
 .glider-next {
   right: -23px;
@@ -112,7 +112,7 @@
 .glider-dot:hover,
 .glider-dot:focus,
 .glider-dot.active {
-  background: #a89cc8;
+  background: #0a1c2d;
 }
 @media(max-width: 36em){
   .glider::-webkit-scrollbar {
