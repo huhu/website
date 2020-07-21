@@ -98,6 +98,13 @@ header {
     display: flex;
     align-items: center;
   }
+
+  .language-image-group {
+    position: absolute;
+    margin: 2rem;
+    width: 80%;
+    text-align: center;
+  }
 }
 
 .language-image {
