@@ -56,7 +56,17 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  padding: 20px 30px 0 0;
+  padding: 10px;
+  color: #0a1c2d;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    font-weight: 600;
+  }
 }
 
 .search-link img {

@@ -11,22 +11,18 @@
                     <div>
                         <div>Search extensions</div>
                         <div class="text menu-item">
-                            <div class="search-link">
+                            <a class="search-link" href="/products/#rust-search-extension">
                                 <img src="/img/rust.png" alt="">
-                                <a href="/products/#rust-search-extension">Rust</a>
-                            </div>
-                            <div class="search-link">
+                                <div>Rust</div>
+                            </a>
+                            <a class="search-link" href="/products/#go-search-extension">
                                 <img src="/img/golang.png" alt="">
-                                <a href="/products/#go-search-extension">Golang</a>
-                            </div>
-                            <div class="search-link">
+                                <div>Golang</div>
+                            </a>
+                            <a class="search-link" href="/products/#js-search-extension">
                                 <img src="/img/javascript.png" alt="">
-                                <a href="">Javascript</a>
-                            </div>
-                            <div class="search-link">
-                                <img src="/img/nodejs.png" alt="">
-                                <a href="">Nodejs</a>
-                            </div>
+                                <div>Javascript</div>
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -53,7 +49,7 @@
         };
         productMenu.onmouseleave = productNav.onmouseleave = () => {
             timeout = setTimeout(() => {
-                productMenu.style.display = "none";
+                // productMenu.style.display = "none";
             }, 200);
         };
         productMenu.onmouseover = () => {
