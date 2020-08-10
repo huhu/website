@@ -1,5 +1,59 @@
-@import "tailwindcss/base";
+:root {
+    --primary-font: 'Open Sans';
+    --secondary-font: 'Roboto';
+    --primary-color: #F9BB2D;
+    --primary-text-color: #121212;
 
-@import "tailwindcss/components";
+    --secondary-color: #fcfaf6;
+    --secondary-text-color: #303030;
+}
 
-@import "tailwindcss/utilities";
+@tailwind base;
+
+@tailwind components;
+
+.logo {
+    @apply font-open-sans;
+    @apply font-extrabold no-underline;
+    @apply text-center;
+}
+
+header {
+    @apply fixed top-0 left-0 right-0 py-2 px-40;
+    @apply flex justify-between items-center;
+    @apply bg-white z-10;
+}
+
+.nav-item {
+    @apply relative mx-6 no-underline font-bold text-lg;
+}
+
+.nav-item:hover {
+    @apply underline;
+}
+
+.menu-product-link {
+    @apply flex flex-col items-center justify-around p-3;
+}
+
+.menu-product-link img {
+    width: 36px;
+}
+
+.menu-product-link:hover {
+    @apply underline font-bold;
+}
+
+.menu-product-link:first-child {
+    @apply pl-0;
+}
+
+.menu-bottom {
+    padding: 0.5rem 0;
+    text-align: center;
+    color: #fcfcfc;
+    background-color: #0a1c2d;
+    border-radius: 0 0 5px 5px;
+}
+
+@tailwind utilities;

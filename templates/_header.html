@@ -1,29 +1,30 @@
-{% set section = get_section(path="_index.md") %}
-<header>
-    <a class="logo" href="/">
+<header style="border-bottom: 1px solid #ebecf2;">
+    <a class="logo text-3xl" href="/">
         HUHU
     </a>
-    <nav>
-        <div class="nav-item subtitle-text">
-            <div id="nav-products" style="cursor: pointer">Products ▾</div>
-            <div id="menu-product" class="menu" style="display: none">
-                <div class="menu-content">
+    <nav class="flex">
+        <div class="nav-item">
+            <div id="nav-products" class="cursor-pointer">Products ▾</div>
+            <div id="menu-product"
+                 class="absolute rounded-lg right-0 z-20 bg-white overflow-hidden"
+                 style="width: 500px;display: none;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);">
+                <div class="p-10">
                     <div>
                         <div>Search extensions</div>
-                        <div class="text menu-item">
-                            <a class="search-link" href="/products/#rust-search-extension">
+                        <div class="flex flex-wrap pb-6 text-base">
+                            <a class="menu-product-link" href="/products/#rust-search-extension">
                                 <img src="/img/rust.png" alt="">
                                 <div>Rust</div>
                             </a>
-                            <a class="search-link" href="/products/#go-search-extension">
+                            <a class="menu-product-link" href="/products/#go-search-extension">
                                 <img src="/img/golang.png" alt="">
                                 <div>Golang</div>
                             </a>
-                            <a class="search-link" href="/products/#js-search-extension">
+                            <a class="menu-product-link" href="/products/#js-search-extension">
                                 <img src="/img/javascript.png" alt="">
                                 <div>Javascript</div>
                             </a>
-                            <a class="search-link" href="/products/#cpp-search-extension">
+                            <a class="menu-product-link" href="/products/#cpp-search-extension">
                                 <img src="/img/cpp.png" alt="">
                                 <div>C/C++</div>
                             </a>
@@ -33,13 +34,13 @@
                         <div>Productivity tools</div>
                     </div>
                 </div>
-                <div class="menu-bottom"><a href="/products">See all our products ></a></div>
+                <div class="menu-bottom"><a class="hover:underline" href="/products">See all our products ></a></div>
                 <!-- <img class="menu-bubble-left" src="/img/blue-bubble.svg" alt=""> -->
-                <img class="menu-bubble-right" src="/img/orange-black.svg" alt="">
+                <img class="absolute right-0 top-0" style="height: 150%;z-index: -1" src="/img/orange-black.svg" alt="">
             </div>
         </div>
-        <a class="nav-item subtitle-text" href="https://blog.huhu.io">Blog</a>
-        <a class="nav-item subtitle-text" href="/about">About</a>
+        <a class="nav-item" href="https://blog.huhu.io">Blog</a>
+        <a class="nav-item" href="/about">About</a>
     </nav>
     <script>
         let productNav = document.getElementById("nav-products");
