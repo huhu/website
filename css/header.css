@@ -8,10 +8,6 @@ header {
     @apply relative mx-6 no-underline font-bold text-lg;
 }
 
-.nav-item:hover {
-    @apply underline;
-}
-
 .menu-product-link {
     @apply flex flex-col items-center justify-around p-3;
 }
