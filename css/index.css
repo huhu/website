@@ -2,6 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "./header.css";
+@import "./footer.css";
 
 :root {
     --primary-font: 'Open Sans';
@@ -13,8 +14,16 @@
     --secondary-text-color: #303030;
 }
 
+a:hover {
+    @apply underline;
+}
+
 .logo {
     @apply font-open-sans;
     @apply font-extrabold no-underline;
     @apply text-center;
+}
+
+.logo:hover, img:hover {
+    @apply no-underline;
 }
