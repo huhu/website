@@ -1,130 +1,75 @@
 {% extends "base.html" %}
 
 {% block body %}
-<section class="page-hero light">
-    <div class="title-text">We made developer's life easier</div>
-    <div class="subtitle-text page-hero-description">
+<section class="mt-12 text-center light">
+    <div class="text-4xl">We made developer's life easier</div>
+    <div class="text-lg pt-8 m-auto">
         From programming language search extension to productivity tools, the developer wanted is we
         hugely cared for.
     </div>
 </section>
 <section>
-    <div class="title-text">Search Extensions</div>
-    <div id="rust-search-extension" class="product-container">
-        <div class="product-content">
-            <img class="product-logo" src="/img/rust-logo.png" alt="rust-logo">
-            <div class="subtitle-text"><b>Rust Search Extension</b></div>
-            <div class="product-description text">
+    <div class="text-3xl font-bold">Search Extensions</div>
+    {% for extension in config.extra.extensions %}
+    {% if loop.index is odd %}
+        {% set direction = 'flex-row' %}
+    {% else %}
+        {% set direction = 'flex-row-reverse' %}
+    {% endif %}
+    <div id="{{ extension.anchor }}" class="flex {{ direction }} py-32 items-center">
+        <div class="flex-shrink-0 text-center" style="flex-basis: 35%;">
+            <img class="inline w-40 mb-6" src="{{ extension.logo }}" alt="{{ extension.lang }}">
+            <div class="text-2xl"><b>{{ extension.name }}</b></div>
+            <div class="text-xl py-6">
                 Search docs, crates, builtin attributes, official books, and error codes, etc in your address bar
                 instantly.
             </div>
             <div><b>Download</b></div>
-            <div style="text-align: center">
-                <a href="https://chrome.google.com/webstore/detail/rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh"
+            <div>
+                <a href="https://chrome.google.com/webstore/detail/rust-search-extension/{{ extension.chrome }}"
                    target="_blank">
-                    <img class="product-icon-tiny" src="/img/chrome.svg" alt="chrome">
+                    <img class="inline w-8 m-2" src="/img/chrome.svg" alt="chrome">
                 </a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/rust-search-extension/"
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/{{ extension.firefox }}/"
                    target="_blank">
-                    <img class="product-icon-tiny" src="/img/firefox.svg" alt="firefox">
+                    <img class="inline w-8 m-2" src="/img/firefox.svg" alt="firefox">
                 </a>
-                <a href="https://microsoftedge.microsoft.com/addons/detail/olemfibpaicdoooacpfffccidjjagmoe"
+                <a href="https://microsoftedge.microsoft.com/addons/detail/{{ extension.edge}}"
                    target="_blank">
-                    <img class="product-icon-tiny" src="/img/edge.svg" alt="edge">
+                    <img class="inline w-8 m-2" src="/img/edge.svg" alt="edge">
                 </a>
             </div>
-            <a class="card-button subtext" href="https://rust-search-extension.now.sh">Visit website</a>
-            <a class="card-button subtext" href="https://github.com/huhu/rust-search-extension">Fork on Github</a>
+            <a class="button" href="{{ extension.url }}">Visit website</a>
+            <a class="button" href="https://github.com/huhu/{{ extension.anchor }}">Fork on Github</a>
         </div>
         <div style="width: 5rem;flex-shrink: 0;"></div>
-        <div class="product-image">
-            <img src="/img/rust-search-extension.gif" alt="">
+        <div class="flex-shrink">
+            <img class="w-full" src="/img/rust-search-extension.gif" alt="">
         </div>
     </div>
-    <div id="go-search-extension" class="product-container">
-        <div class="product-image">
-            <img src="/img/rust-search-extension.gif" alt="">
-        </div>
-        <div style="width: 5rem;flex-shrink: 0;"></div>
-        <div class="product-content">
-            <img class="product-logo" src="/img/golang.png" alt="golang-logo">
-            <div class="subtitle-text"><b>Go Search Extension</b></div>
-            <div class="product-description text">
-                Search docs, crates, builtin attributes, official books, and error codes, etc in your address bar
-                instantly.
-            </div>
-            <div><b>Download</b></div>
-            <div style="text-align: center">
-                <a href="https://chrome.google.com/webstore/detail/golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb"
-                   target="_blank">
-                    <img class="product-icon-tiny" src="/img/chrome.svg" alt="chrome">
-                </a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/go-search-extension/"
-                   target="_blank">
-                    <img class="product-icon-tiny" src="/img/firefox.svg" alt="firefox">
-                </a>
-                <a href="https://microsoftedge.microsoft.com/addons/detail/ebibclchdmagkhopidkjckjkbhghfehh"
-                   target="_blank">
-                    <img class="product-icon-tiny" src="/img/edge.svg" alt="edge">
-                </a>
-            </div>
-            <a class="card-button subtext" href="https://go-search-extension.now.sh">Visit website</a>
-            <a class="card-button subtext" href="https://github.com/huhu/go-search-extension">Fork on Github</a>
-        </div>
-    </div>
-    <div id="cpp-search-extension" class="product-container">
-        <div class="product-content">
-            <img class="product-logo" src="/img/cpp.png" alt="cpp-logo">
-            <div class="subtitle-text"><b>C/C++ Search Extension</b></div>
-            <div class="product-description text">
-                Search docs, crates, builtin attributes, official books, and error codes, etc in your address bar
-                instantly.
-            </div>
-            <div><b>Download</b></div>
-            <div style="text-align: center">
-                <a href="https://chrome.google.com/webstore/detail/rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh"
-                   target="_blank">
-                    <img class="product-icon-tiny" src="/img/chrome.svg" alt="chrome">
-                </a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/rust-search-extension/"
-                   target="_blank">
-                    <img class="product-icon-tiny" src="/img/firefox.svg" alt="firefox">
-                </a>
-                <a href="https://microsoftedge.microsoft.com/addons/detail/olemfibpaicdoooacpfffccidjjagmoe"
-                   target="_blank">
-                    <img class="product-icon-tiny" src="/img/edge.svg" alt="edge">
-                </a>
-            </div>
-            <a class="card-button subtext" href="#">Visit website</a>
-            <a class="card-button subtext" href="https://github.com/huhu/cpp-search-extension">Fork on Github</a>
-        </div>
-        <div style="width: 5rem;flex-shrink: 0;"></div>
-        <div class="product-image">
-            <img src="/img/rust-search-extension.gif" alt="">
-        </div>
-    </div>
+    {% endfor %}
 </section>
 <section class="light">
-    <div class="title-text">Productivity Tools</div>
+    <div class="text-3xl font-bold">Productivity Tools</div>
 </section>
 <section>
-    <div class="title-text">Other open-source projects</div>
+    <div class="text-3xl font-bold">Other open-source projects</div>
     <div class="columns">
         <div class="column">
             <img style="width: 80px" src="/img/sdk.svg" alt="icon">
-            <div style="padding: 2.5rem 0 1.2rem" class="subtitle-text"><b>Search Extension Sdk</b></div>
-            <div class="text">A core sdk powers you build your own search extension easily.</div>
-            <a class="card-button subtext" href="https://github.com/huhu/search-extension-core">View Github</a>
+            <div style="padding: 2.5rem 0 1.2rem" class="text-lg font-bold"><b>Search Extension Sdk</b></div>
+            <div class="text-base">A core sdk powers you build your own search extension easily.</div>
+            <a class="button" href="https://github.com/huhu/search-extension-core">View Github</a>
         </div>
         <div class="column">
             <img style="width: 80px" src="https://juice.huhu.io/juice.svg" alt="icon">
-            <div style="padding: 2.5rem 0 1.2rem" class="subtitle-text"><b>Juice</b></div>
-            <div class="text">An intuitive, elegant, and responsive Zola™ theme for product sites.</div>
-            <a class="card-button subtext" href="https://github.com/huhu/juice">View Github</a>
+            <div style="padding: 2.5rem 0 1.2rem" class="text-lg font-bold"><b>Juice</b></div>
+            <div class="text-base">An intuitive, elegant, and responsive Zola™ theme for product sites.</div>
+            <a class="button" href="https://github.com/huhu/juice">View Github</a>
         </div>
         <div class="column">
-            <div style="padding: 2.5rem 0 1.2rem" class="subtitle-text"><b>More</b></div>
-            <div class="text">More projects are coming...</div>
+            <div style="padding: 2.5rem 0 1.2rem" class="text-lg font-bold"><b>More</b></div>
+            <div class="text-base">More projects are coming...</div>
         </div>
     </div>
 </section>
