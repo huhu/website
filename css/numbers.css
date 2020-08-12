@@ -1,0 +1,52 @@
+.numbers-container {
+  display: flex;
+}
+
+.number-item,
+.numbers {
+  display: flex;
+  width: 100%;
+}
+
+.numbers {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: auto;
+}
+
+.number-item {
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.number {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.number-note {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .numbers {
+    width: 50%;
+  }
+
+  .number-item {
+    width: 50%;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .number {
+    font-size: 60px;
+    line-height: 73px;
+  }
+
+  .number-note {
+    font-size: 20px;
+  }
+}

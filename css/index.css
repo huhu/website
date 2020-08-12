@@ -1,8 +1,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "./header.css";
-@import "./footer.css";
+@import "header.css";
+@import "footer.css";
+@import "dots.css";
+@import "numbers.css";
+@import "column.css";
 
 :root {
     --primary-font: 'Open Sans';
@@ -12,6 +15,14 @@
 
     --secondary-color: #fcfaf6;
     --secondary-text-color: #303030;
+}
+
+html {
+    @apply font-open-sans;
+}
+
+img {
+    @apply max-w-none;
 }
 
 a:hover {
@@ -26,4 +37,45 @@ a:hover {
 
 .logo:hover, img:hover {
     @apply no-underline;
+}
+
+section {
+    padding: 5rem 10rem;
+}
+
+.black {
+    background-color: #000;
+    color: #fcfcfc;
+}
+
+.dark {
+    background-color: #0a1c2d;
+    color: #fcfcfc;
+}
+
+.light {
+    background-color: #F6F9FB;
+}
+
+.green {
+    background-color: #22C875;
+    color: #fcfcfc;
+}
+
+.round-animate-image {
+    @apply inline m-1 w-32 h-32 animate-float-rotate shadow-xl bg-white rounded-full;
+}
+
+.button {
+    border-radius: 3px;
+    background-color: #020F1C;
+    display: inline-block;
+    padding: 6px 20px;
+    margin-top: 2rem;
+    color: #fcfcfc;
+    text-decoration: none;
+}
+
+.button:hover {
+    text-decoration: underline;
 }

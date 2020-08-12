@@ -14,3 +14,9 @@ build_search_index = false
 
 [extra]
 # Put all your custom variables here
+extensions = [
+    {'lang' = 'rust', 'name' = 'Rust Search Extension', 'anchor' = 'rust-search-extension'},
+    {'lang' = 'golang', 'name' = 'Go Search Extension', 'anchor' = 'go-search-extension'},
+    {'lang' = 'javascript', 'name' = 'JS Search Extension', 'anchor' = 'js-search-extension'},
+    {'lang' = 'cpp', 'name' = 'C/C++ Search Extension', 'anchor' = 'cpp-search-extension'},
+]
