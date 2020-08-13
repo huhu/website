@@ -2,94 +2,68 @@
 
 {% block body %}
 <link rel="stylesheet" href="glider.css">
-<div class="hero">
+<div class="flex items-center px-32">
     <div>
-        <div class="heading-text">
+        <div class="text-6xl font-bold leading-none">
             Build product the developers want
         </div>
-        <div class="subtitle-text" style="padding: 3.5rem 2rem 0; ">
+        <div class="text-xl pt-12">
             Huhu is a geek startup dedicated to creating open-source tools for software developers. We love
             discovering cool new tools,
             and we know you do too. That’s why Huhu is dedicated to giving back to all the software development
             geeks out there who have inspired us and contributed to the global developer community over the years.
         </div>
     </div>
-    <div class="language-image-gallery">
-        <div class="language-image-group">
-            <img class="language-image circle" src="/img/rust.png" alt="rust">
-            <img class="language-image circle" src="/img/golang.png" alt="golang">
-            <img class="language-image circle" src="/img/cpp.png" alt="cpp">
-            <img class="language-image circle" src="/img/javascript.png" alt="javascript">
-            <img class="language-image circle" src="/img/typescript.png" alt="typescript">
+    <div class="relative flex items-center py-10 px-4" style="width: 50%;">
+        <div class="absolute text-center m-6 w-4/5">
+            {% for lang in ['rust', 'golang', 'cpp', 'javascript', 'typescript'] %}
+            <img class="round-animate-image" src="/img/{{ lang }}.png" alt="{{ lang }}">
+            {% endfor %}
         </div>
         <img style="min-width: 100%;" src="/img/orange-yellow.svg" alt="">
     </div>
 </div>
-<section class="light" style="text-align: center">
-    <div class="subtitle-text">
+<section class="light text-center">
+    <div class="text-2xl">
         More than 100 teams and companies use our products
     </div>
-    <div class="text" style="padding: 2rem">
+    <div class="text-lg p-10">
         Google, Mozilla, Facebook, Alibaba, etc
     </div>
 </section>
 <section class="dark">
-    <div class="title-text" style="color: white">Documentation search extension</div>
-    <div class="subtitle-text" style="color: white; margin-top: 3rem">
+    <div class="text-4xl">Documentation search extension</div>
+    <div class="text-xl mt-8">
         Executed directly from the address bar, these lightweight extensions provide instant search results of docs and
         libraries.
     </div>
-    <div style="margin-top: 3rem;justify-content: space-around;display: flex;flex-wrap: wrap;">
-        <div style="text-align: center;display: inline-block;">
-            <img style="bottom: -60px;position: relative;z-index: 2;" class="language-image circle" src="/img/rust.png"
-                alt="rust">
-            <div class="card">
-                <div class="title-text" style="margin-top: 50px">Rust Search Extension</div>
-                <div class="subtitle-text card-content">The ultimate search extension for Rust</div>
-                <a class="card-button" href="/products#rust-search-extension">Learn more</a>
+    <div class="flex mt-8 justify-around flex-wrap">
+        {% for extension in config.extra.extensions %}
+        <div class="text-center inline-block">
+            <img style="bottom: -60px;" class="relative z-20 round-animate-image"
+                 src="/img/{{ extension.lang }}.png"
+                 alt="{{ extension.lang }}">
+            <div class="relative bg-white text-center rounded-md p-5 text-black" style="width: 480px;">
+                <div class="text-3xl font-semibold" style="margin-top: 50px">{{ extension.name }}</div>
+                <div class="text-xl m-auto mt-6 w-4/5">The ultimate search extension for {{ extension.lang }}</div>
+                <a class="button" href="/products#{{ extension.anchor }}">Learn more</a>
             </div>
         </div>
-        <div style="text-align: center;display: inline-block;">
-            <img style="bottom: -60px;position: relative;z-index: 2;" class="language-image circle"
-                src="/img/golang.png" alt="golang">
-            <div class="card">
-                <div class="title-text" style="margin-top: 50px">Go Search Extension</div>
-                <div class="subtitle-text card-content">The ultimate search extension for Golang</div>
-                <a class="card-button" href="/products#go-search-extension">Learn more</a>
-            </div>
-        </div>
-        <div style="text-align: center;display: inline-block;">
-            <img style="bottom: -60px;position: relative;z-index: 2;" class="language-image circle"
-                src="/img/javascript.png" alt="javascript">
-            <div class="card">
-                <div class="title-text" style="margin-top: 50px">JS Search Extension</div>
-                <div class="subtitle-text card-content">The ultimate search extension for Javascript</div>
-                <a class="card-button" href="/products#js-search-extension">Learn more</a>
-            </div>
-        </div>
-        <div style="text-align: center;display: inline-block;">
-            <img style="bottom: -60px;position: relative;z-index: 2;" class="language-image circle"
-                src="/img/cpp.png" alt="javascript">
-            <div class="card">
-                <div class="title-text" style="margin-top: 50px">C/C++ Search Extension</div>
-                <div class="subtitle-text card-content">The ultimate search extension for C/C++</div>
-                <a class="card-button" href="/products#cpp-search-extension">Learn more</a>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 <section class="light">
-    <div class="title-text">Productivity tools</div>
-    <div class="subtitle-text" style="margin-top: 3rem">
+    <div class="text-4xl">Productivity tools</div>
+    <div class="text-xl mt-8">
         We build a lot of productivity tools.
     </div>
-    <div style="margin-top: 5rem">
+    <div class="flex mt-8 text-base">
         Developer input method
     </div>
 </section>
 <section class="green">
-    <div class="title-text" style="color: white">We love open-source</div>
-    <div class="subtitle-text" style="color: white; margin-top: 3rem">
+    <div class="text-4xl">We love open-source</div>
+    <div class="text-xl mt-8">
         Executed directly from the address bar, these lightweight extensions provide instant search results of docs and
         libraries.
     </div>
@@ -124,62 +98,30 @@
     </div>
 </section>
 <section class="light">
-    <div class="title-text">Developers love us</div>
-    <div class="subtitle-text" style=" margin-top: 3rem">
+    <div class="text-4xl">Developers love us</div>
+    <div class="text-lg mt-8">
         We got a huge set of testimonials for our users, here are some.
     </div>
-    <div class="testimonial-container" style="margin-top: 5rem">
+    <div class="flex justify-center mt-12" style="margin-top: 5rem">
         <div class="glider-contain" style="width: 60%;">
-            <div class="glider">
-                <div class="testimonial-item">
+            <div class="glider shadow-sm">
+                {% for testimonial in section.extra.testimonials %}
+                <div class="relative bg-white rounded-lg w-4/5">
                     <div style="padding:2rem">
-                        <div class="testimonial-badge subtitle-text"><b>Rust Search Extension</b></div>
-                        <div class="text">
-                            <i>This is by far the best extension I know about for a programming language I use. You also
-                                seem to
-                                have great ideas for new features, which you keep adding on a fast pace. All of them are
-                                also
-                                features that I did not even know that I want.</i>
+                        <div class="text-2xl mb-8"><b>{{ testimonial.product }}</b></div>
+                        <div class="text-base">
+                            <i>{{ testimonial.content }}</i>
                         </div>
                     </div>
-                    <div class="testimonial-bottom subtext">
-                        comment by User on /r/rust
+                    <div class="text-right px-8 py-4" style="border-radius: 0 0 5px 5px;background-color: #F3F6FA;">
+                        comment by User on {{ testimonial.source }}
                     </div>
                 </div>
-                <div class="testimonial-item">
-                    <div style="padding:2rem">
-                        <div class="testimonial-badge subtitle-text"><b>Rust Search Extension</b></div>
-                        <div class="text">
-                            <i>This is by far the best extension I know about for a programming language I use. You also
-                                seem to
-                                have great ideas for new features, which you keep adding on a fast pace. All of them are
-                                also
-                                features that I did not even know that I want.</i>
-                        </div>
-                    </div>
-                    <div class="testimonial-bottom subtext">
-                        comment by User on /r/rust
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div style="padding:2rem">
-                        <div class="testimonial-badge subtitle-text"><b>Rust Search Extension</b></div>
-                        <div class="text">
-                            <i>This is by far the best extension I know about for a programming language I use. You also
-                                seem to
-                                have great ideas for new features, which you keep adding on a fast pace. All of them are
-                                also
-                                features that I did not even know that I want.</i>
-                        </div>
-                    </div>
-                    <div class="testimonial-bottom subtext">
-                        comment by User on /r/rust
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <button aria-label="Previous" class="glider-prev" style="top:40%; left: -42px">«</button>
             <button aria-label="Next" class="glider-next" style="top:40%; right: -42px;">»</button>
-            <div role="tablist" id="dots" class="glider-dots"></div>
+            <div id="dots"></div>
         </div>
     </div>
 </section>
@@ -188,20 +130,20 @@
         <div class="column">
             <img src="/img/technologies.svg" class="column-icon" alt="">
             <div class="column-name">Why Huhu?</div>
-            <div class="text">We create cool stuff that coders need and want, making your lives easier and more fun.
+            <div>We create cool stuff that coders need and want, making your lives easier and more fun.
             </div>
         </div>
         <div class="column">
             <img src="/img/growth_support.svg" class="column-icon" alt="">
             <div class="column-name">About Us</div>
-            <div class="text">
+            <div>
                 We’re a community of developers dedicated to solving real-world coding problems.
             </div>
         </div>
         <div class="column">
             <img src="/img/professionals.svg" class="column-icon" alt="">
             <div class="column-name">Collaborate</div>
-            <div class="text">
+            <div>
                 Join our network to share your feedback and help create the next generation of cool tools.
             </div>
         </div>

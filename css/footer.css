@@ -1,0 +1,11 @@
+footer {
+    @apply flex justify-center items-center;
+    @apply p-12;
+    background-color: #020f1c;
+    color: #fcfcfc;
+}
+
+footer img {
+    width: 25px;
+    margin-right: 15px;
+}
