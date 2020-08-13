@@ -1,5 +1,10 @@
 module.exports = {
-    purge: [],
+    purge: {
+        enabled: true,
+        content: [
+            './templates/**/*.html'
+        ],
+    },
     theme: {
         fontFamily: {
             'open-sans': ['Open\\ Sans', 'sans-serif'],
