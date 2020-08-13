@@ -12,9 +12,9 @@
     <div class="text-3xl font-bold">Search Extensions</div>
     {% for extension in config.extra.extensions %}
     {% if loop.index is odd %}
-        {% set direction = 'flex-row' %}
+    {% set direction = 'flex-row' %}
     {% else %}
-        {% set direction = 'flex-row-reverse' %}
+    {% set direction = 'flex-row-reverse' %}
     {% endif %}
     <div id="{{ extension.anchor }}" class="flex {{ direction }} py-32 items-center">
         <div class="flex-shrink-0 text-center" style="flex-basis: 35%;">
@@ -26,15 +26,18 @@
             </div>
             <div><b>Download</b></div>
             <div>
-                <a href="https://chrome.google.com/webstore/detail/rust-search-extension/{{ extension.chrome }}"
+                <a class="hover:no-underline"
+                   href="https://chrome.google.com/webstore/detail/rust-search-extension/{{ extension.chrome }}"
                    target="_blank">
                     <img class="inline w-8 m-2" src="/img/chrome.svg" alt="chrome">
                 </a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/{{ extension.firefox }}/"
+                <a class="hover:no-underline"
+                   href="https://addons.mozilla.org/en-US/firefox/addon/{{ extension.firefox }}/"
                    target="_blank">
                     <img class="inline w-8 m-2" src="/img/firefox.svg" alt="firefox">
                 </a>
-                <a href="https://microsoftedge.microsoft.com/addons/detail/{{ extension.edge}}"
+                <a class="hover:no-underline"
+                   href="https://microsoftedge.microsoft.com/addons/detail/{{ extension.edge}}"
                    target="_blank">
                     <img class="inline w-8 m-2" src="/img/edge.svg" alt="edge">
                 </a>
@@ -57,19 +60,19 @@
     <div class="columns">
         <div class="column">
             <img style="width: 80px" src="/img/sdk.svg" alt="icon">
-            <div style="padding: 2.5rem 0 1.2rem" class="text-lg font-bold"><b>Search Extension Sdk</b></div>
-            <div class="text-base">A core sdk powers you build your own search extension easily.</div>
+            <div style="padding: 2.5rem 0 1.2rem" class="text-xl font-bold"><b>Search Extension Sdk</b></div>
+            <div class="text-lg">A core sdk powers you build your own search extension easily.</div>
             <a class="button" href="https://github.com/huhu/search-extension-core">View Github</a>
         </div>
         <div class="column">
             <img style="width: 80px" src="https://juice.huhu.io/juice.svg" alt="icon">
-            <div style="padding: 2.5rem 0 1.2rem" class="text-lg font-bold"><b>Juice</b></div>
-            <div class="text-base">An intuitive, elegant, and responsive Zola™ theme for product sites.</div>
+            <div style="padding: 2.5rem 0 1.2rem" class="text-xl font-bold"><b>Juice</b></div>
+            <div class="text-lg">An intuitive, elegant, and responsive Zola™ theme for product sites.</div>
             <a class="button" href="https://github.com/huhu/juice">View Github</a>
         </div>
         <div class="column">
-            <div style="padding: 2.5rem 0 1.2rem" class="text-lg font-bold"><b>More</b></div>
-            <div class="text-base">More projects are coming...</div>
+            <div style="padding: 2.5rem 0 1.2rem" class="text-xl font-bold"><b>More</b></div>
+            <div class="text-lg">More projects are coming...</div>
         </div>
     </div>
 </section>
