@@ -1,8 +1,9 @@
-<header style="border-bottom: 1px solid #ebecf2;">
+<header class="md:py-2 md:px-20 lg:px-30 xl:px-40">
     <a class="logo text-3xl" href="/">
         HUHU
     </a>
-    <nav class="flex">
+    <div id="menu-toggle" class="md:hidden cursor-pointer p-1 text-2xl">≡</div>
+    <nav class="hidden flex-col md:flex md:flex-row">
         <div class="nav-item">
             <div id="nav-products" class="cursor-pointer">Products ▾</div>
             <div id="menu-product"
@@ -60,6 +61,19 @@
         productMenu.onmouseover = () => {
             if (timeout) {
                 clearTimeout(timeout);
+            }
+        };
+
+        let toggle = document.getElementById("menu-toggle");
+        let nav = document.querySelector("nav");
+        let navHidden = true;
+        toggle.onclick = () => {
+            if (navHidden) {
+                nav.classList.remove('hidden');
+                navHidden = false;
+            } else {
+                nav.classList.add('hidden');
+                navHidden = true;
             }
         };
     </script>
