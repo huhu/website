@@ -12,11 +12,11 @@
     <div class="text-3xl font-bold">Search Extensions</div>
     {% for extension in config.extra.extensions %}
     {% if loop.index is odd %}
-    {% set direction = 'flex-row' %}
+    {% set direction = 'flex-col md:flex-row' %}
     {% else %}
-    {% set direction = 'flex-row-reverse' %}
+    {% set direction = 'flex-col md:flex-row-reverse' %}
     {% endif %}
-    <div id="{{ extension.anchor }}" class="flex {{ direction }} py-32 items-center">
+    <div id="{{ extension.anchor }}" class="flex {{ direction }} py-32 justify-center items-center">
         <div class="flex-shrink-0 text-center" style="flex-basis: 35%;">
             <img class="inline w-40 mb-6" src="{{ extension.logo }}" alt="{{ extension.lang }}">
             <div class="text-2xl"><b>{{ extension.name }}</b></div>
@@ -46,7 +46,7 @@
             <a class="button" href="https://github.com/huhu/{{ extension.anchor }}">Fork on Github</a>
         </div>
         <div style="width: 5rem;flex-shrink: 0;"></div>
-        <div class="flex-shrink">
+        <div class="mt-12 md:mt-0 flex-shrink">
             <img class="w-full" src="/img/rust-search-extension.gif" alt="">
         </div>
     </div>
