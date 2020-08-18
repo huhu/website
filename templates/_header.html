@@ -2,8 +2,17 @@
     <a class="logo text-3xl" href="/">
         HUHU
     </a>
-    <div id="menu-toggle" class="md:hidden cursor-pointer p-1 text-2xl">≡</div>
-    <nav class="hidden flex-col md:flex md:flex-row">
+    <div id="menu-toggle" class="md:hidden cursor-pointer">
+        <svg class="h-6 w-4 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+        </svg>
+        <svg class="hidden h-6 w-4 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+                  d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+        </svg>
+    </div>
+    <nav class="hidden fixed flex flex-col nav-full md:flex md:flex-row md:relative md:top-auto md:text-left">
         <div class="nav-item">
             <div id="nav-products" class="cursor-pointer">Products ▾</div>
             <div id="menu-product"
@@ -69,11 +78,15 @@
         let navHidden = true;
         toggle.onclick = () => {
             if (navHidden) {
-                nav.classList.remove('hidden');
                 navHidden = false;
+                nav.classList.remove('hidden');
+                toggle.firstElementChild.classList.add('hidden');
+                toggle.lastElementChild.classList.remove('hidden');
             } else {
-                nav.classList.add('hidden');
                 navHidden = true;
+                nav.classList.add('hidden');
+                toggle.firstElementChild.classList.remove('hidden');
+                toggle.lastElementChild.classList.add('hidden');
             }
         };
     </script>

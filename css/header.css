@@ -1,7 +1,14 @@
 header {
-    @apply fixed top-0 left-0 right-0 py-2 px-40;
+    @apply fixed top-0 left-0 right-0 py-1 px-10;
     @apply flex justify-between items-center;
     @apply bg-white z-50;
+    border-bottom: 1px solid #ebecf2;
+}
+
+.nav-full {
+    @apply left-0 right-0 bottom-0;
+    @apply text-center bg-white p-4;
+    top: 54px;
 }
 
 .nav-item {
