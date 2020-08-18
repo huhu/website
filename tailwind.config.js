@@ -15,6 +15,13 @@ module.exports = {
                 primary: 'var(--primary-color)',
                 secondary: 'var(--secondary-color)',
             },
+            width: {
+                '72': '18rem',
+                '84': '21rem',
+                '96': '24rem',
+                '104': '28rem',
+                '112': '32rem',
+            },
             animation: {
                 'float-rotate': 'float-rotate 7s ease-in-out infinite',
             },

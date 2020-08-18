@@ -3,68 +3,83 @@
         HUHU
     </a>
     <div id="menu-toggle" class="md:hidden cursor-pointer">
-        <svg class="h-6 w-4 fill-current" viewBox="0 0 24 24">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
             <path fill-rule="evenodd"
                   d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
         </svg>
-        <svg class="hidden h-6 w-4 fill-current" viewBox="0 0 24 24">
+        <svg class="hidden h-6 w-6 fill-current" viewBox="0 0 24 24">
             <path fill-rule="evenodd"
                   d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
         </svg>
     </div>
-    <nav class="hidden fixed flex flex-col nav-full md:flex md:flex-row md:relative md:top-auto md:text-left">
-        <div class="nav-item">
+    <nav class="hidden fixed flex flex-col nav-full md:flex md:flex-row md:relative md:top-auto">
+        <div class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg">
             <div id="nav-products" class="cursor-pointer">Products ▾</div>
             <div id="menu-product"
-                 class="absolute rounded-lg right-0 z-20 bg-white overflow-hidden"
-                 style="width: 500px;display: none;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);">
-                <div class="p-10">
-                    <div>
-                        <div>Search extensions</div>
-                        <div class="flex flex-wrap pb-6 text-base">
-                            <a class="menu-product-link" href="/products/#rust-search-extension">
-                                <img src="/img/rust.png" alt="">
-                                <div>Rust</div>
-                            </a>
-                            <a class="menu-product-link" href="/products/#go-search-extension">
-                                <img src="/img/golang.png" alt="">
-                                <div>Golang</div>
-                            </a>
-                            <a class="menu-product-link" href="/products/#js-search-extension">
-                                <img src="/img/javascript.png" alt="">
-                                <div>Javascript</div>
-                            </a>
-                            <a class="menu-product-link" href="/products/#cpp-search-extension">
-                                <img src="/img/cpp.png" alt="">
-                                <div>C/C++</div>
-                            </a>
+                 class="hidden w-auto mt-5 md:mt-auto md:w-112 md:absolute rounded-lg right-0 z-20 bg-white overflow-hidden"
+                 style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);">
+                <div class="relative z-10">
+                    <div class="p-5 md:p-10">
+                        <div>
+                            <div>Search extensions</div>
+                            <div class="flex flex-wrap pb-6 text-base">
+                                <a class="menu-product-link" href="/products/#rust-search-extension">
+                                    <img src="/img/rust.png" alt="">
+                                    <div>Rust</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#go-search-extension">
+                                    <img src="/img/golang.png" alt="">
+                                    <div>Golang</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#js-search-extension">
+                                    <img src="/img/javascript.png" alt="">
+                                    <div>Javascript</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#cpp-search-extension">
+                                    <img src="/img/cpp.png" alt="">
+                                    <div>C/C++</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div>Productivity tools</div>
                         </div>
                     </div>
-                    <div>
-                        <div>Productivity tools</div>
+                    <div class="menu-bottom"><a class="hover:underline" href="/products">See all our products ></a>
                     </div>
+                    <!-- <img class="menu-bubble-left" src="/img/blue-bubble.svg" alt=""> -->
+                    <img class="absolute right-0 top-0" style="height: 150%;z-index: -1" src="/img/orange-black.svg"
+                         alt="">
                 </div>
-                <div class="menu-bottom"><a class="hover:underline" href="/products">See all our products ></a></div>
-                <!-- <img class="menu-bubble-left" src="/img/blue-bubble.svg" alt=""> -->
-                <img class="absolute right-0 top-0" style="height: 150%;z-index: -1" src="/img/orange-black.svg" alt="">
             </div>
         </div>
-        <a class="nav-item" href="https://blog.huhu.io">Blog</a>
-        <a class="nav-item" href="/about">About</a>
+        <a class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg" href="https://blog.huhu.io">Blog</a>
+        <a class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg" href="/about">About</a>
     </nav>
     <script>
         let productNav = document.getElementById("nav-products");
         let productMenu = document.getElementById("menu-product");
+        let menuHidden = true;
+        productNav.onclick = () => {
+            if (menuHidden) {
+                menuHidden = false;
+                productMenu.classList.remove("hidden");
+            } else {
+                menuHidden = true;
+                productMenu.classList.add("hidden");
+            }
+        };
+
         let timeout = 0;
         productNav.onmouseover = () => {
             if (timeout) {
                 clearTimeout(timeout);
             }
-            productMenu.style.display = "block";
+            productMenu.classList.remove("hidden");
         };
         productMenu.onmouseleave = productNav.onmouseleave = () => {
             timeout = setTimeout(() => {
-                productMenu.style.display = "none";
+                productMenu.classList.add("hidden");
             }, 200);
         };
         productMenu.onmouseover = () => {
