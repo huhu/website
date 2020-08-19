@@ -15,8 +15,8 @@ build_search_index = false
 [extra]
 # Put all your custom variables here
 extensions = [
-    {'logo' = '/img/rust-logo.png', 'lang' = 'rust', 'name' = 'Rust Search Extension', 'anchor' = 'rust-search-extension', 'url' = 'https://rust-search-extension.now.sh', 'chrome' = 'rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh', 'firefox' = 'rust-search-extension', 'edge' = 'olemfibpaicdoooacpfffccidjjagmoe'},
-    {'logo' = '/img/golang.png', 'lang' = 'golang', 'name' = 'Go Search Extension', 'anchor' = 'go-search-extension', 'url' = 'https://go-search-extension.now.sh', 'chrome' = 'golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb', 'firefox' = 'go-search-extension', 'edge' = 'ebibclchdmagkhopidkjckjkbhghfehh'},
-    {'logo' = '/img/javascript.png', 'lang' = 'javascript', 'name' = 'JS Search Extension', 'anchor' = 'js-search-extension','url' = 'https://js-search-extension.now.sh', 'chrome' = '', 'firefox' = '', 'edge' = ''},
-    {'logo' = '/img/cpp.png', 'lang' = 'cpp', 'name' = 'C/C++ Search Extension', 'anchor' = 'cpp-search-extension','url' = 'https://cpp-search-extension.now.sh', 'chrome' = '', 'firefox' = '', 'edge' = ''},
+    {'logo' = '/img/rust-logo.png', 'lang' = 'rust', 'name' = 'Rust Search Extension', 'anchor' = 'rust-search-extension', 'url' = 'https://rust.extension.sh', 'chrome' = 'rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh', 'firefox' = 'rust-search-extension', 'edge' = 'olemfibpaicdoooacpfffccidjjagmoe'},
+    {'logo' = '/img/golang.png', 'lang' = 'golang', 'name' = 'Go Search Extension', 'anchor' = 'go-search-extension', 'url' = 'https://go.extension.sh', 'chrome' = 'golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb', 'firefox' = 'go-search-extension', 'edge' = 'ebibclchdmagkhopidkjckjkbhghfehh'},
+    {'logo' = '/img/javascript.png', 'lang' = 'javascript', 'name' = 'JS Search Extension', 'anchor' = 'js-search-extension','url' = 'https://js.extension.sh', 'chrome' = '', 'firefox' = '', 'edge' = ''},
+    {'logo' = '/img/cpp.png', 'lang' = 'cpp', 'name' = 'C/C++ Search Extension', 'anchor' = 'cpp-search-extension','url' = 'https://cpp.extension.sh', 'chrome' = '', 'firefox' = '', 'edge' = ''},
 ]
