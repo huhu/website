@@ -86,3 +86,7 @@ section {
 .button:hover {
     text-decoration: underline;
 }
+
+.glide__bullet--active {
+    @apply bg-black;
+}
