@@ -2,7 +2,8 @@ module.exports = {
     purge: {
         enabled: false,
         content: [
-            './templates/**/*.html'
+            './templates/**/*.html',
+            './static/**/*.html',
         ],
     },
     theme: {
