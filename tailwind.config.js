@@ -1,6 +1,6 @@
 module.exports = {
     purge: {
-        enabled: false,
+        enabled: process.env.ENV === 'production',
         content: [
             './templates/**/*.html',
             './static/**/*.html',
