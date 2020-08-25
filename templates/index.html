@@ -29,7 +29,7 @@
     </div>
     <div class="flex flex-col text-center md:flex-row items-center justify-evenly text-lg p-10">
         {% for brand in ['google', 'facebook', 'alibaba', 'aws', 'mozilla'] %}
-        <img class="w-32 my-8" src="/img/{{ brand }}-logo.svg" alt="{{ brand }}">
+        <img class="w-32 my-8 mx-6" src="/img/{{ brand }}-logo.svg" alt="{{ brand }}">
         {% endfor %}
     </div>
 </section>
@@ -39,9 +39,9 @@
         Executed directly from the address bar, these lightweight extensions provide instant search results of docs and
         libraries. Once you’ve tried them, you’ll wonder how you lived without them!
     </div>
-    <div class="flex mt-8 justify-around flex-wrap">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-8">
         {% for extension in config.extra.extensions %}
-        <div class="text-center inline-block">
+        <div class="text-center m-auto">
             <img style="bottom: -60px;" class="relative z-20 round-animate-image"
                  src="/img/{{ extension.lang }}.png"
                  alt="{{ extension.lang }}">
