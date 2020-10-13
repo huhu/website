@@ -20,3 +20,6 @@ extensions = [
     {'logo' = '/img/javascript.png', 'lang' = 'javascript', 'name' = 'JS Search Extension', 'id' = 'js-search-extension','url' = 'https://js.extension.sh', 'chrome' = '', 'firefox' = '', 'edge' = ''},
     {'logo' = '/img/cpp.png', 'lang' = 'cpp', 'name' = 'C/C++ Search Extension', 'id' = 'cpp-search-extension','url' = 'https://cpp.extension.sh', 'chrome' = 'cc++-search-extension/ifpcmhciihicaljnhgobnhoehoabidhd', 'firefox' = 'c-c-search-extension', 'edge' = 'ffajabficigcddnckikojejmkammkmpe'},
 ]
+meta_title = "Huhu.io: Build products developers want"
+meta_description = "Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu's search extensions and productivity tools."
+meta_banner = "https://huhu.io/img/banner.png"
