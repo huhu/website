@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# postcss-import, tailwindcss are required.
+# npm install postcss-import tailwindcss
 
 set -e
 
