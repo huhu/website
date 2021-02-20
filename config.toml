@@ -15,10 +15,10 @@ build_search_index = false
 [extra]
 # Put all your custom variables here
 extensions = [
-    {'logo' = '/img/rust-logo.png', 'lang' = 'rust', 'name' = 'Rust Search Extension', 'id' = 'rust-search-extension', 'url' = 'https://rust.extension.sh', 'chrome' = 'rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh', 'firefox' = 'rust-search-extension', 'edge' = 'olemfibpaicdoooacpfffccidjjagmoe'},
-    {'logo' = '/img/golang.png', 'lang' = 'golang', 'name' = 'Go Search Extension', 'id' = 'go-search-extension', 'url' = 'https://go.extension.sh', 'chrome' = 'golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb', 'firefox' = 'go-search-extension', 'edge' = 'ebibclchdmagkhopidkjckjkbhghfehh'},
-    {'logo' = '/img/cpp.png', 'lang' = 'cpp', 'name' = 'C/C++ Search Extension', 'id' = 'cpp-search-extension','url' = 'https://cpp.extension.sh', 'chrome' = 'cc++-search-extension/ifpcmhciihicaljnhgobnhoehoabidhd', 'firefox' = 'c-c-search-extension', 'edge' = 'ffajabficigcddnckikojejmkammkmpe'},
-    {'logo' = '/img/javascript.png', 'lang' = 'javascript', 'name' = 'JS Search Extension', 'id' = 'js-search-extension','url' = 'https://js.extension.sh', 'chrome' = '', 'firefox' = '', 'edge' = ''},
+    {logo = '/img/rust-logo.png', lang = 'rust', name = 'Rust Search Extension', id = 'rust-search-extension', url = 'https://rust.extension.sh', chrome = 'rust-search-extension/ennpfpdlaclocpomkiablnmbppdnlhoh', firefox = 'rust-search-extension', edge = 'olemfibpaicdoooacpfffccidjjagmoe'},
+    {logo = '/img/golang.png', lang = 'golang', name = 'Go Search Extension', id = 'go-search-extension', url = 'https://go.extension.sh', chrome = 'golang-search/epanejkfcekejmmfbcpbcbigfpefbnlb', firefox = 'go-search-extension', edge = 'ebibclchdmagkhopidkjckjkbhghfehh'},
+    {logo = '/img/cpp.png', lang = 'cpp', name = 'C/C++ Search Extension', id = 'cpp-search-extension',url = 'https://cpp.extension.sh', chrome = 'cc++-search-extension/ifpcmhciihicaljnhgobnhoehoabidhd', firefox = 'c-c-search-extension', edge = 'ffajabficigcddnckikojejmkammkmpe'},
+    {logo = '/img/javascript.png', lang = 'javascript', name = 'JS Search Extension', id = 'js-search-extension',url = 'https://js.extension.sh', chrome = '', firefox = '', edge = ''},
 ]
 meta_title = "Huhu.io: Build products developers want"
 meta_description = "Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu's search extensions and productivity tools."
