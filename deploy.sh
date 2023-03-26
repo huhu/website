@@ -6,11 +6,10 @@ set -e
 
 export ENV="production"
 
+npm install
+
 echo 'Compile postcss...'
 postcss css/index.css -d static/css
 
 echo 'Zola building...'
 zola build
-
-echo 'Vercel deploying...'
-vercel --prod
