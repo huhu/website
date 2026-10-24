@@ -2,14 +2,8 @@
 # postcss-import, tailwindcss are required.
 # npm install postcss-import tailwindcss
 
-set -e
+set -euo pipefail
+cd "$(dirname "$0")"
 
 export ENV="production"
-
-npm install
-
-echo 'Compile postcss...'
-postcss css/index.css -d static/css
-
-echo 'Zola building...'
-zola build
+exec bash ./build.sh
