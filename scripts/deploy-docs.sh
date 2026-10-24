@@ -30,6 +30,7 @@ printf '%s\n' 'huhu.io' > "$WORK/CNAME"
 : > "$WORK/.nojekyll"
 
 grep -q 'meiguo.app' "$WORK/index.html"
+grep -q 'https://aiberm.com' "$WORK/index.html"
 grep -q '^huhu.io$' "$WORK/CNAME"
 
 git -C "$WORK" init -b "$BRANCH"
