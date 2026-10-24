@@ -13,6 +13,7 @@ zola build
 test -s public/index.html
 test -s public/css/index.css
 grep -q 'meiguo.app' public/index.html
+grep -q 'https://aiberm.com' public/index.html
 grep -q '^huhu.io$' public/CNAME
 
-echo "Built public/ ($(find public -type f | wc -l) files); footer links to meiguo.app"
+echo "Built public/ ($(find public -type f | wc -l) files); footer links to meiguo.app and aiberm.com"
