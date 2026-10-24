@@ -5,12 +5,12 @@ base_url = "/"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = false
-
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+
+# Syntax highlighting stays off. Zola 0.19+ rejects the old top-level
+# `highlight_code` key, and Zola 0.22 (Cloudflare Pages default) removed
+# `[markdown].highlight_code` as well. This site has no fenced code blocks.
 
 [extra]
 # Put all your custom variables here
