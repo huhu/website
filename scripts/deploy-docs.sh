@@ -16,7 +16,10 @@ if [[ ! -s public/index.html ]]; then
 fi
 
 BRANCH=now
-REMOTE="https://github.com/${GITHUB_REPOSITORY}.git"
+# x-access-token in the URL is what GitHub's installation tokens accept.
+# A bearer extraheader is rejected, and the repo is private so an
+# unauthenticated push stops at "could not read Username".
+AUTH_REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 API="https://api.github.com/repos/${GITHUB_REPOSITORY}/pages"
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -37,17 +40,17 @@ git -C "$WORK" \
   commit -m "Deploy huhu.io"
 
 export GIT_TERMINAL_PROMPT=0
-git_auth=(-c "http.extraheader=AUTHORIZATION: bearer ${GITHUB_TOKEN}")
 
 # Pushes must run inside the orphan site repo, not the source checkout.
+# credential.helper= keeps the runner's helper from dropping the URL token.
 site_git() {
-  git -C "$WORK" "${git_auth[@]}" "$@"
+  git -C "$WORK" -c credential.helper= "$@"
 }
 
 branch_missing() {
   local rc
   set +e
-  git "${git_auth[@]}" ls-remote --exit-code --heads "$REMOTE" "$BRANCH" >/dev/null
+  git -c credential.helper= ls-remote --exit-code --heads "$AUTH_REMOTE" "$BRANCH" >/dev/null
   rc=$?
   set -e
   if [[ "$rc" -eq 0 ]]; then
@@ -64,7 +67,7 @@ branch_missing() {
 pre_pushed=0
 if branch_missing; then
   echo "Creating ${BRANCH} so GitHub Pages can publish it."
-  site_git push "$REMOTE" "HEAD:${BRANCH}"
+  site_git push "$AUTH_REMOTE" "HEAD:${BRANCH}"
   pre_pushed=1
 fi
 
@@ -117,7 +120,7 @@ if [[ "$pre_pushed" -eq 1 ]]; then
     commit --allow-empty -m "Trigger GitHub Pages build"
 fi
 
-site_git push --force "$REMOTE" "HEAD:${BRANCH}"
+site_git push --force "$AUTH_REMOTE" "HEAD:${BRANCH}"
 
 echo "Published ${BRANCH}."
 gh_api "$API" | jq '{html_url,cname,public,build_type,source,status,https_enforced}'
