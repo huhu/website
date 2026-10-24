@@ -9,8 +9,9 @@ compile_sass = false
 build_search_index = false
 
 # Syntax highlighting stays off. Zola 0.19+ rejects the old top-level
-# `highlight_code` key, and Zola 0.22 (Cloudflare Pages default) removed
-# `[markdown].highlight_code` as well. This site has no fenced code blocks.
+# `highlight_code` key, and later releases removed `[markdown].highlight_code`.
+# CI pins Zola 0.17.2 (same as the other huhu sites). This site has no fenced
+# code blocks, so the key is omitted and the file stays valid on 0.17.2.
 
 [extra]
 # Put all your custom variables here

@@ -1,8 +1,7 @@
 name: Build and deploy huhu.io
 
-# Git-connected Cloudflare Pages on account 8061dbdcbf07c89772f0942f60e775aa
-# fails every push in ~10s with no log text (check title stays "Building").
-# This publishes the same project by direct upload, matching huhu/query.rs.
+# GitHub Pages serves the static site from branch `now` (root), the same way
+# the other huhu docs sites publish. Cloudflare Pages / Wrangler is not used.
 
 on:
   push:
@@ -10,12 +9,16 @@ on:
   pull_request:
   workflow_dispatch:
 
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
-  contents: read
-  deployments: write
+  contents: write
+  pages: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,41 +28,16 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install Zola 0.22.1
-        run: |
-          curl -fsSL -o /tmp/zola.tar.gz https://github.com/getzola/zola/releases/download/v0.22.1/zola-v0.22.1-x86_64-unknown-linux-gnu.tar.gz
-          tar -xzf /tmp/zola.tar.gz -C /tmp
-          sudo mv /tmp/zola /usr/local/bin/zola
-          zola --version
+      - name: Install Zola 0.17.2
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.17.2
 
       - name: Build site
-        run: |
-          npm ci
-          # Do not set ENV=production. That purges Tailwind; live huhu.io serves the full sheet.
-          ./node_modules/.bin/postcss css/index.css -d static/css
-          zola build
-          grep -q meiguo.app public/index.html
+        run: ./scripts/build-site.sh
 
-      - name: Require Cloudflare API token
+      - name: Publish now branch and GitHub Pages
         if: github.event_name != 'pull_request'
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_PAGES_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
-        run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ] && [ -z "$CLOUDFLARE_PAGES_TOKEN" ]; then
-            echo "Blocked: Actions on huhu/website has neither CLOUDFLARE_API_TOKEN nor CLOUDFLARE_PAGES_TOKEN."
-            echo "The token needs Pages edit on account 8061dbdcbf07c89772f0942f60e775aa (project website)."
-            echo "The Cursor Cloudflare connection is a different account and cannot deploy this project."
-            exit 1
-          fi
-
-      - name: Publish to Cloudflare Pages
-        if: github.event_name != 'pull_request'
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CLOUDFLARE_PAGES_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || '8061dbdcbf07c89772f0942f60e775aa' }}
-          # Detached HEAD cannot tell Wrangler the production branch.
-          command: pages deploy public --project-name=website --branch=master --commit-dirty=true
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          wranglerVersion: "3"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./scripts/deploy-docs.sh
