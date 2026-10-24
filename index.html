@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Roboto:ital@0;1&display=swap"
+          rel="stylesheet">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords"
+      content="huhu.io, rust search extension, go search extension, developer tools, productivity tools">
+<link rel="shortcut icon" href="favicon.ico">
+<meta itemprop="name"
+      content="Huhu.io: Build products developers want">
+<meta itemprop="description"
+      content="Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu&#x27;s search extensions and productivity tools.">
+<meta itemprop="image" content="https:&#x2F;&#x2F;huhu.io&#x2F;img&#x2F;banner.png">
+
+<meta property="og:url" content="https://huhu.io">
+<meta property="og:type" content="website">
+<meta property="og:title"
+      content="Huhu.io: Build products developers want">
+<meta property="og:description"
+      content="Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu&#x27;s search extensions and productivity tools.">
+<meta property="og:image" content="https:&#x2F;&#x2F;huhu.io&#x2F;img&#x2F;banner.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@_huhuio">
+<meta name="twitter:creator" content="@_huhuio">
+<meta name="twitter:title"
+      content="Huhu.io: Build products developers want">
+<meta name="twitter:description"
+      content="Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu&#x27;s search extensions and productivity tools.">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;huhu.io&#x2F;img&#x2F;banner.png">
+    <title>Huhu</title>
+    <script src="/js/index.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    
+    
+</head>
+<body>
+<header class="md:py-2 md:px-20 lg:px-30 xl:px-40">
+    <a class="logo text-3xl" href="/">
+        HUHU
+    </a>
+    <div id="menu-toggle" class="md:hidden cursor-pointer">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+        </svg>
+        <svg class="hidden h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+                  d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+        </svg>
+    </div>
+    <nav class="hidden fixed flex flex-col nav-full md:flex md:flex-row md:relative md:top-auto">
+        <div class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg">
+            <div id="nav-products" class="cursor-pointer">Products ▾</div>
+            <div id="menu-product"
+                 class="hidden w-auto mt-5 md:mt-auto md:w-112 md:absolute rounded-lg right-0 z-20 bg-white overflow-hidden"
+                 style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);">
+                <div class="relative z-10">
+                    <div class="p-5 md:p-10">
+                        <div>
+                            <div>Search extensions</div>
+                            <div class="flex flex-wrap pb-6 text-base">
+                                <a class="menu-product-link" href="/products/#rust-search-extension">
+                                    <img src="/img/rust.png" alt="">
+                                    <div>Rust</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#go-search-extension">
+                                    <img src="/img/golang.png" alt="">
+                                    <div>Golang</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#js-search-extension">
+                                    <img src="/img/javascript.png" alt="">
+                                    <div>Javascript</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#cpp-search-extension">
+                                    <img src="/img/cpp.png" alt="">
+                                    <div>C/C++</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div>Productivity tools</div>
+                        </div>
+                    </div>
+                    <div class="menu-bottom"><a class="hover:underline" href="/products">See all our products ></a>
+                    </div>
+                    <!-- <img class="menu-bubble-left" src="/img/blue-bubble.svg" alt=""> -->
+                    <img class="absolute right-0 top-0" style="height: 150%;z-index: -1" src="/img/orange-black.svg"
+                         alt="">
+                </div>
+            </div>
+        </div>
+        <a class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg" href="https://geddle.com">Geddle</a>
+        <a class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg" href="/about">About</a>
+    </nav>
+    <script>
+        let productNav = document.getElementById("nav-products");
+        let productMenu = document.getElementById("menu-product");
+        let menuHidden = true;
+        productNav.onclick = () => {
+            if (menuHidden) {
+                menuHidden = false;
+                productMenu.classList.remove("hidden");
+            } else {
+                menuHidden = true;
+                productMenu.classList.add("hidden");
+            }
+        };
+
+        let timeout = 0;
+        productNav.onmouseover = () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            productMenu.classList.remove("hidden");
+        };
+        productMenu.onmouseleave = productNav.onmouseleave = () => {
+            timeout = setTimeout(() => {
+                productMenu.classList.add("hidden");
+            }, 200);
+        };
+        productMenu.onmouseover = () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+        };
+
+        let toggle = document.getElementById("menu-toggle");
+        let nav = document.querySelector("nav");
+        let navHidden = true;
+        toggle.onclick = () => {
+            if (navHidden) {
+                navHidden = false;
+                nav.classList.remove('hidden');
+                toggle.firstElementChild.classList.add('hidden');
+                toggle.lastElementChild.classList.remove('hidden');
+            } else {
+                navHidden = true;
+                nav.classList.add('hidden');
+                toggle.firstElementChild.classList.remove('hidden');
+                toggle.lastElementChild.classList.add('hidden');
+            }
+        };
+    </script>
+</header>
+
+
+<link rel="stylesheet" href="glide.core.min.css">
+<div class="w-full h-screen flex items-center px-6 md:px-20 lg:px-24 xl:px-32">
+    <div class="text-center md:text-left z-10">
+        <div class="text-4xl lg:text-6xl font-bold leading-none">
+            Build products developers want
+        </div>
+        <div class="text-xl pt-12">
+            Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu's search extensions and productivity tools.
+        </div>
+    </div>
+    <div class="absolute left-0 right-0 md:relative md:w-1/2 md:flex justify-center items-center py-10 px-4 z-0">
+        <div class="hidden md:block absolute text-center md:m-3 md:w-full lg:m-6 lg:w-4/5 xl:w-2/3">
+            
+            <img class="round-animate-image" src="/img/rust.png" alt="rust">
+            
+            <img class="round-animate-image" src="/img/golang.png" alt="golang">
+            
+            <img class="round-animate-image" src="/img/cpp.png" alt="cpp">
+            
+            <img class="round-animate-image" src="/img/javascript.png" alt="javascript">
+            
+            <img class="round-animate-image" src="/img/typescript.png" alt="typescript">
+            
+        </div>
+        <img class="w-full md:w-auto md:min-w-full" src="/img/orange-yellow.svg" alt="">
+    </div>
+</div>
+<section class="light text-center">
+    <div class="text-2xl">
+        Join our global community of individuals, teams, and companies who love us, including:
+    </div>
+    <div class="flex flex-col text-center md:flex-row items-center justify-evenly text-lg p-10">
+        
+        <img class="w-32 my-8 mx-6" src="/img/google-logo.svg" alt="google">
+        
+        <img class="w-32 my-8 mx-6" src="/img/facebook-logo.svg" alt="facebook">
+        
+        <img class="w-32 my-8 mx-6" src="/img/alibaba-logo.svg" alt="alibaba">
+        
+        <img class="w-32 my-8 mx-6" src="/img/aws-logo.svg" alt="aws">
+        
+        <img class="w-32 my-8 mx-6" src="/img/mozilla-logo.svg" alt="mozilla">
+        
+    </div>
+</section>
+<section class="dark">
+    <div class="text-4xl">Search extension</div>
+    <div class="text-xl mt-8 w-full lg:w-2/3">
+        Executed directly from the address bar, these lightweight extensions provide instant search results of docs and
+        libraries. Once you’ve tried them, you’ll wonder how you lived without them!
+    </div>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-8">
+        
+        <div class="text-center m-auto">
+            <img style="bottom: -60px;" class="relative z-20 round-animate-image"
+                 src="/img/rust.png"
+                 alt="rust">
+            <div class="w-full relative bg-white text-center rounded-md p-5 text-black lg:w-104">
+                <div class="text-3xl font-semibold" style="margin-top: 50px">Rust Search Extension</div>
+                <div class="text-xl m-auto mt-6 w-4/5">The ultimate search extension for rust</div>
+                <a class="button" href="/products#rust-search-extension">Learn more</a>
+            </div>
+        </div>
+        
+        <div class="text-center m-auto">
+            <img style="bottom: -60px;" class="relative z-20 round-animate-image"
+                 src="/img/golang.png"
+                 alt="golang">
+            <div class="w-full relative bg-white text-center rounded-md p-5 text-black lg:w-104">
+                <div class="text-3xl font-semibold" style="margin-top: 50px">Go Search Extension</div>
+                <div class="text-xl m-auto mt-6 w-4/5">The ultimate search extension for golang</div>
+                <a class="button" href="/products#go-search-extension">Learn more</a>
+            </div>
+        </div>
+        
+        <div class="text-center m-auto">
+            <img style="bottom: -60px;" class="relative z-20 round-animate-image"
+                 src="/img/cpp.png"
+                 alt="cpp">
+            <div class="w-full relative bg-white text-center rounded-md p-5 text-black lg:w-104">
+                <div class="text-3xl font-semibold" style="margin-top: 50px">C&#x2F;C++ Search Extension</div>
+                <div class="text-xl m-auto mt-6 w-4/5">The ultimate search extension for cpp</div>
+                <a class="button" href="/products#cpp-search-extension">Learn more</a>
+            </div>
+        </div>
+        
+        <div class="text-center m-auto">
+            <img style="bottom: -60px;" class="relative z-20 round-animate-image"
+                 src="/img/k8s.png"
+                 alt="k8s">
+            <div class="w-full relative bg-white text-center rounded-md p-5 text-black lg:w-104">
+                <div class="text-3xl font-semibold" style="margin-top: 50px">Kubernetes Search Extension</div>
+                <div class="text-xl m-auto mt-6 w-4/5">The ultimate search extension for k8s</div>
+                <a class="button" href="/products#k8s-search-extension">Learn more</a>
+            </div>
+        </div>
+        
+        <div class="text-center m-auto">
+            <img style="bottom: -60px;" class="relative z-20 round-animate-image"
+                 src="/img/javascript.png"
+                 alt="javascript">
+            <div class="w-full relative bg-white text-center rounded-md p-5 text-black lg:w-104">
+                <div class="text-3xl font-semibold" style="margin-top: 50px">JS Search Extension</div>
+                <div class="text-xl m-auto mt-6 w-4/5">The ultimate search extension for javascript</div>
+                <a class="button" href="/products#js-search-extension">Learn more</a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<section class="light">
+    <div class="text-4xl">Productivity tools</div>
+    <div class="text-xl mt-8 w-full lg:w-2/3">
+        We might be known as “the search geeks”, but we’re not a one trick pony!
+        We’re not just all about fast — we make things fast, easy, and fun!
+    </div>
+</section>
+<section class="green">
+    <div class="text-4xl">Sharing is Caring!</div>
+    <div class="text-xl mt-8 w-full lg:w-2/3">
+        Like you. We’re open-source at heart!
+    </div>
+    <div class="numbers-container" style="margin-top: 5rem">
+        <div class="dots"></div>
+        <div class="numbers">
+            <div class="number-item">
+                <div class="number">10+</div>
+                <div class="number-note">Projects</div>
+            </div>
+            <div class="number-item">
+                <div class="number">1400+</div>
+                <div class="number-note">Github Stars</div>
+            </div>
+            <div class="number-item">
+                <div class="number">110+</div>
+                <div class="number-note">Github Forks</div>
+            </div>
+            <div class="number-item">
+                <div class="number">30+</div>
+                <div class="number-note">Contributors</div>
+            </div>
+            <div class="number-item">
+                <div class="number">2000+</div>
+                <div class="number-note">Commits</div>
+            </div>
+            <div class="number-item">
+                <div class="number">40+</div>
+                <div class="number-note">Versions released</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="light">
+    <div class="text-4xl">Your colleagues love what we do!</div>
+    <div class="text-lg mt-8">
+        We got a huge set of testimonials from our users, here are just a few of their testimonials.
+    </div>
+    <div class="flex justify-center mt-12 mx-auto w-full md:w-2/3">
+        <div class="glide">
+            <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides h-full">
+                
+                <li class="glide__slide flex flex-col justify-around bg-white rounded-lg shadow-sm">
+                    <div class="p-5 text-2xl"><b>Rust Search Extension</b></div>
+                    <div class="p-5 text-base">
+                        <i>This is by far the best extension I know about for a programming language I use. You also seem to have great ideas for new features, which you keep adding on a fast pace. All of them are also features that I did not even know that I want.</i>
+                    </div>
+                    <div class="text-right px-8 py-4" style="border-radius: 0 0 5px 5px;background-color: #F3F6FA;">
+                        comment by User on &#x2F;r&#x2F;rust
+                    </div>
+                </li>
+                
+                <li class="glide__slide flex flex-col justify-around bg-white rounded-lg shadow-sm">
+                    <div class="p-5 text-2xl"><b>Rust Search Extension</b></div>
+                    <div class="p-5 text-base">
+                        <i>If you aren&#x27;t using the Rust Search extension, you absolutely should be. Makes it several times faster to land where you want, *especially* with some libraries (cough nom cough) for which Google stubbornly prefers to link to old version.</i>
+                    </div>
+                    <div class="text-right px-8 py-4" style="border-radius: 0 0 5px 5px;background-color: #F3F6FA;">
+                        comment by User on &#x2F;r&#x2F;rust
+                    </div>
+                </li>
+                
+                <li class="glide__slide flex flex-col justify-around bg-white rounded-lg shadow-sm">
+                    <div class="p-5 text-2xl"><b>C&#x2F;C++ Search Extension</b></div>
+                    <div class="p-5 text-base">
+                        <i>I wanted to thank you - I&#x27;ve been using it on Firefox ever since you posted about the first release. I use it almost every day, so thank you!</i>
+                    </div>
+                    <div class="text-right px-8 py-4" style="border-radius: 0 0 5px 5px;background-color: #F3F6FA;">
+                        comment by User on &#x2F;r&#x2F;cpp
+                    </div>
+                </li>
+                
+                </ul>
+            </div>
+            <div class="glide__bullets text-center m-6" data-glide-el="controls[nav]">
+                <button class="glide__bullet bg-gray-400 m-2 w-3 h-3 rounded-full" data-glide-dir="=0"></button>
+                <button class="glide__bullet bg-gray-400 m-2 w-3 h-3 rounded-full" data-glide-dir="=1"></button>
+                <button class="glide__bullet bg-gray-400 m-2 w-3 h-3 rounded-full" data-glide-dir="=2"></button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dark">
+    <div class="columns">
+        <div class="column">
+            <img src="/img/technologies.svg" class="column-icon" alt="">
+            <div class="column-name">Why Huhu?</div>
+            <div>We create cool stuff that coders need and want, making your lives easier and more fun.
+            </div>
+        </div>
+        <div class="column">
+            <img src="/img/growth_support.svg" class="column-icon" alt="">
+            <div class="column-name">About Us</div>
+            <div>
+                We’re a community of developers dedicated to solving real-world coding problems.
+            </div>
+        </div>
+        <div class="column">
+            <img src="/img/professionals.svg" class="column-icon" alt="">
+            <div class="column-name">Collaborate</div>
+            <div>
+                Join our network to share your feedback and help create the next generation of cool tools.
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/js/animateDots.js"></script>
+<script src="/js/glide.min.js"></script>
+<script type="text/javascript">
+    new Glide('.glide', {
+        type: 'carousel',
+        autoplay: 5000,
+        hoverpause: true,
+        animationDuration: 1200,
+    }).mount();
+</script>
+
+
+<footer class="flex-col">
+    <div class="flex flex-col md:flex-row items-start justify-evenly w-full">
+        <div class="md:text-center mb-10 md:mb-0 md:mr-24">
+            <a href="/" class="logo text-4xl">HUHU</a>
+            <div class="flex justify-between my-4 w-40">
+                <a href="https://github.com/huhu">
+                    <img class="w-6" src="/img/github.svg" alt="Github">
+                </a>
+                <a href="https://twitter.com/_huhuio">
+                    <img class="w-6" src="/img/twitter.svg" alt="Twitter">
+                </a>
+                <a href="https://discord.gg/xucZNVd">
+                    <img class="w-6" src="/img/discord.svg" alt="Discord">
+                </a>
+            </div>
+        </div>
+        <div class="self-start">
+            <div class="text-lg font-bold mb-5">All our extensions</div>
+            <ul>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;rust.extension.sh" target="_parent">
+                        Rust Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;go.extension.sh" target="_parent">
+                        Go Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;cpp.extension.sh" target="_parent">
+                        C&#x2F;C++ Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;k8s.extension.sh" target="_parent">
+                        Kubernetes Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;js.extension.sh" target="_parent">
+                        JS Search Extension
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="self-start md:self-start">
+            <div class="text-lg font-bold mt-8 mb-5 md:mt-0">Connect</div>
+            <ul>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://huhu.io/about">About Huhu</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://huhu.io/geddle">About Geddle</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://geddle.com">Geddle</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://arrfounder.com">Arrfounder</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://meiguo.app">meiguo.app</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://aiberm.com">aiberm.com</a></li>
+            </ul>
+        </div>
+        <div class="self-start md:self-start">
+            <div class="text-lg font-bold mt-8 mb-5 md:mt-0">Legal</div>
+            <ul>
+                <li class="my-2"><a class="text-sm text-gray-400" href="/privacy">Privacy</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="/terms">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="self-start md:self-center mt-10">
+        <small class="text-gray-400">
+            Copyright © 2025 <a href="https://huhu.io">Huhu.io</a>
+        </small>
+    </div>
+</footer>
+</body>
+</html>

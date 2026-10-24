@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Roboto:ital@0;1&display=swap"
+          rel="stylesheet">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords"
+      content="huhu.io, rust search extension, go search extension, developer tools, productivity tools">
+<link rel="shortcut icon" href="favicon.ico">
+<meta itemprop="name"
+      content="Huhu.io: Build products developers want">
+<meta itemprop="description"
+      content="Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu&#x27;s search extensions and productivity tools.">
+<meta itemprop="image" content="https:&#x2F;&#x2F;huhu.io&#x2F;img&#x2F;banner.png">
+
+<meta property="og:url" content="https://huhu.io">
+<meta property="og:type" content="website">
+<meta property="og:title"
+      content="Huhu.io: Build products developers want">
+<meta property="og:description"
+      content="Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu&#x27;s search extensions and productivity tools.">
+<meta property="og:image" content="https:&#x2F;&#x2F;huhu.io&#x2F;img&#x2F;banner.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@_huhuio">
+<meta name="twitter:creator" content="@_huhuio">
+<meta name="twitter:title"
+      content="Huhu.io: Build products developers want">
+<meta name="twitter:description"
+      content="Code faster, have fun, and create amazing things! Join the thousands of developers using Huhu&#x27;s search extensions and productivity tools.">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;huhu.io&#x2F;img&#x2F;banner.png">
+    <title>Huhu</title>
+    <script src="/js/index.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    
+    
+</head>
+<body>
+<header class="md:py-2 md:px-20 lg:px-30 xl:px-40">
+    <a class="logo text-3xl" href="/">
+        HUHU
+    </a>
+    <div id="menu-toggle" class="md:hidden cursor-pointer">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+        </svg>
+        <svg class="hidden h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+                  d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+        </svg>
+    </div>
+    <nav class="hidden fixed flex flex-col nav-full md:flex md:flex-row md:relative md:top-auto">
+        <div class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg">
+            <div id="nav-products" class="cursor-pointer">Products ▾</div>
+            <div id="menu-product"
+                 class="hidden w-auto mt-5 md:mt-auto md:w-112 md:absolute rounded-lg right-0 z-20 bg-white overflow-hidden"
+                 style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);">
+                <div class="relative z-10">
+                    <div class="p-5 md:p-10">
+                        <div>
+                            <div>Search extensions</div>
+                            <div class="flex flex-wrap pb-6 text-base">
+                                <a class="menu-product-link" href="/products/#rust-search-extension">
+                                    <img src="/img/rust.png" alt="">
+                                    <div>Rust</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#go-search-extension">
+                                    <img src="/img/golang.png" alt="">
+                                    <div>Golang</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#js-search-extension">
+                                    <img src="/img/javascript.png" alt="">
+                                    <div>Javascript</div>
+                                </a>
+                                <a class="menu-product-link" href="/products/#cpp-search-extension">
+                                    <img src="/img/cpp.png" alt="">
+                                    <div>C/C++</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div>Productivity tools</div>
+                        </div>
+                    </div>
+                    <div class="menu-bottom"><a class="hover:underline" href="/products">See all our products ></a>
+                    </div>
+                    <!-- <img class="menu-bubble-left" src="/img/blue-bubble.svg" alt=""> -->
+                    <img class="absolute right-0 top-0" style="height: 150%;z-index: -1" src="/img/orange-black.svg"
+                         alt="">
+                </div>
+            </div>
+        </div>
+        <a class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg" href="https://geddle.com">Geddle</a>
+        <a class="relative mt-5 md:mx-6 md:my-auto font-bold text-lg" href="/about">About</a>
+    </nav>
+    <script>
+        let productNav = document.getElementById("nav-products");
+        let productMenu = document.getElementById("menu-product");
+        let menuHidden = true;
+        productNav.onclick = () => {
+            if (menuHidden) {
+                menuHidden = false;
+                productMenu.classList.remove("hidden");
+            } else {
+                menuHidden = true;
+                productMenu.classList.add("hidden");
+            }
+        };
+
+        let timeout = 0;
+        productNav.onmouseover = () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            productMenu.classList.remove("hidden");
+        };
+        productMenu.onmouseleave = productNav.onmouseleave = () => {
+            timeout = setTimeout(() => {
+                productMenu.classList.add("hidden");
+            }, 200);
+        };
+        productMenu.onmouseover = () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+        };
+
+        let toggle = document.getElementById("menu-toggle");
+        let nav = document.querySelector("nav");
+        let navHidden = true;
+        toggle.onclick = () => {
+            if (navHidden) {
+                navHidden = false;
+                nav.classList.remove('hidden');
+                toggle.firstElementChild.classList.add('hidden');
+                toggle.lastElementChild.classList.remove('hidden');
+            } else {
+                navHidden = true;
+                nav.classList.add('hidden');
+                toggle.firstElementChild.classList.remove('hidden');
+                toggle.lastElementChild.classList.add('hidden');
+            }
+        };
+    </script>
+</header>
+
+
+<section class="mt-12 text-center light">
+    <div class="text-4xl">Geddle</div>
+</section>
+<section class="text">
+    <p><a class="underline" href="https://geddle.com">Geddle.com</a> is the AI-powered platform connecting AI/SaaS brands with influencers for recurring revenue growth.</p>
+    
+    <h2 class="text-2xl font-bold py-4">For AI/SaaS branding</h2>
+    <p><a href="https://geddle.com">Geddle.com</a> can accelerate Your AI/SaaS Growth with Influencer Marketing. Connect with the perfect influencers to promote your AI/SaaS product and drive recurring subscription revenue.</p>
+    
+    <p class="py-2">See: <a href="https://geddle.com/brands">Geddle Brands page</a></p>
+    
+    <h2 class="text-2xl font-bold py-4">For Influencers</h2>
+
+    <p><a href="https://geddle.com">Geddle.com</a> can help you turn Your Videos into Recurring Revenue</p>
+    <p>Create passive income streams by promoting AI/SaaS products to your audience with Geddle's AI-powered platform.</p>
+    
+    <p class="py-2">See: <a href="https://geddle.com/influencers">Geddle Influencers page</a></p>
+
+</section>
+
+
+<footer class="flex-col">
+    <div class="flex flex-col md:flex-row items-start justify-evenly w-full">
+        <div class="md:text-center mb-10 md:mb-0 md:mr-24">
+            <a href="/" class="logo text-4xl">HUHU</a>
+            <div class="flex justify-between my-4 w-40">
+                <a href="https://github.com/huhu">
+                    <img class="w-6" src="/img/github.svg" alt="Github">
+                </a>
+                <a href="https://twitter.com/_huhuio">
+                    <img class="w-6" src="/img/twitter.svg" alt="Twitter">
+                </a>
+                <a href="https://discord.gg/xucZNVd">
+                    <img class="w-6" src="/img/discord.svg" alt="Discord">
+                </a>
+            </div>
+        </div>
+        <div class="self-start">
+            <div class="text-lg font-bold mb-5">All our extensions</div>
+            <ul>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;rust.extension.sh" target="_parent">
+                        Rust Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;go.extension.sh" target="_parent">
+                        Go Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;cpp.extension.sh" target="_parent">
+                        C&#x2F;C++ Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;k8s.extension.sh" target="_parent">
+                        Kubernetes Search Extension
+                    </a>
+                </li>
+                
+                <li class="my-2">
+                    <a class="text-sm text-gray-400" href="https:&#x2F;&#x2F;js.extension.sh" target="_parent">
+                        JS Search Extension
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="self-start md:self-start">
+            <div class="text-lg font-bold mt-8 mb-5 md:mt-0">Connect</div>
+            <ul>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://huhu.io/about">About Huhu</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://huhu.io/geddle">About Geddle</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://geddle.com">Geddle</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://arrfounder.com">Arrfounder</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://meiguo.app">meiguo.app</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="https://aiberm.com">aiberm.com</a></li>
+            </ul>
+        </div>
+        <div class="self-start md:self-start">
+            <div class="text-lg font-bold mt-8 mb-5 md:mt-0">Legal</div>
+            <ul>
+                <li class="my-2"><a class="text-sm text-gray-400" href="/privacy">Privacy</a></li>
+                <li class="my-2"><a class="text-sm text-gray-400" href="/terms">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="self-start md:self-center mt-10">
+        <small class="text-gray-400">
+            Copyright © 2025 <a href="https://huhu.io">Huhu.io</a>
+        </small>
+    </div>
+</footer>
+</body>
+</html>
